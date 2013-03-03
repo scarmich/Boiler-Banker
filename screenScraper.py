@@ -1,40 +1,39 @@
+import urllib
 import urllib2
 import cookielib
-import re
-import ClientForm
 
-class PFCUForm:
-   def __init__(self, username, password):
-      self.username = username
-      self.password = password
-      self.url = 'http://web.ics.purdue.edu/~powerst/systfp/index.php'
+url = 'http://web.ics.purdue.edu/~powerst/systfp/login.php'
+destUrl = 'http://web.ics.purdue.edu/~powerst/systfp/home.php'
 
-      cookiejar = cookielib.LWPCookieJar()
-      cookiejar = urllib2.HTTPCookieProcessor(cookiejar)
-      # debugger = urllib2.HTTPHandler(debuglevel=1)
+username = 'Shawn'
+password = 'abc'
 
-      opener = urllib2.build_opener(cookiejar)
-      urllib2.install_opener(opener)
-      
-   def login(self):
+values = {'username' : username,
+      'password' : password}
 
-      response = urllib2.urlopen(self.url)
-      forms = ClientForm.ParseResponse(response, backwards_compat=False)
+#create a cookie jar to keep cookies sent from HTTP get requests
+jar = cookielib.CookieJar()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
 
-      # forms[0] is 'GET', forms[1] is 'POST'
-      form = forms[1]
+#encode credentials
+login_cred = urllib.urlencode(values)
 
-      try:
-         form['form[username]'] = self.username
-         form['form[password]'] = self.password
-      except Exception, e:
-         print 'The following error occured: \n"%s"' % e
-         print
-         print 'A good idea is to open a browser and see if you can log in from there.'
-         print 'URL:', self.url
-         raw_input()
-         exit()
+#log in to the guard url
+opener.open(url, login_cred)
 
-      self.page = urllib2.urlopen(form.click('login')).read()
+#retrieve desination URL HTML code
+reqPage = opener.open(destUrl)
 
-Scraper = PFCUForm('shawn', 'abc')
+#store contents of destination URL
+content = reqPage.read()
+
+print content
+
+print ''
+print 'Encoded data:'
+print '----------------'
+print login_cred
+print ''
+print 'Cookies:'
+print '----------------'
+print jar

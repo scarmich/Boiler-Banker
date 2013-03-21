@@ -46,6 +46,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
         </activity>
+        <activity
+            android:name="com.example.boilerbanker.DisplayTransactionActivities"
+            android:label="@string/title_activity_display_transaction_activities"
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
+        </activity>
     </application>
 
 </manifest>

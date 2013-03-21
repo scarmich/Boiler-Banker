@@ -15,7 +15,13 @@
     <string name="settings">Settings</string>
     <string name="logout">Sign Out</string>
     <string name="title_activity_display_settings_view">Settings</string>
-	<string name="offline_setting">Enable Offline View</string>
-	<string name="back">Back</string>
-    
+    <string name="offline_setting">Enable Offline View</string>
+    <string name="back">Back</string>
+    <string name="Edit">edit</string>
+    <string name="Log_Out">Log Out</string>
+    <string name="Back">Back</string>
+    <string name="Transaction">Transaction</string>
+    <string name="TransactionTitle">Transactions</string>
+    <string name="title_activity_display_transaction_activities">Transactions</string>
+
 </resources>

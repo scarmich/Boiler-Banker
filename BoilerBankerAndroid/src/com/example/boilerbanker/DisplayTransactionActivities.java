@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.support.v4.app.NavUtils;
 
 public class DisplayTransactionActivities extends Activity {
@@ -14,6 +15,10 @@ public class DisplayTransactionActivities extends Activity {
 		setContentView(R.layout.activity_display_transaction_activities);
 		// Show the Up button in the action bar.
 		setupActionBar();
+	}
+	
+	public void backReturnWelcome(View view) {
+		finish();	
 	}
 
 	/**

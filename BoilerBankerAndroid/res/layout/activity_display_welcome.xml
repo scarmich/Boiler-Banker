@@ -13,7 +13,8 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
-        android:text="@string/transaction" />
+        android:text="@string/transaction"
+    	android:onClick="openTransactionActivity" />
     
     <Button
         android:id="@+id/budget_button"

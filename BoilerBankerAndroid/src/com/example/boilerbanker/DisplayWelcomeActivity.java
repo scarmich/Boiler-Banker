@@ -19,6 +19,11 @@ public class DisplayWelcomeActivity extends Activity {
 		startActivity(settingsIntent);
 	}
 	
+	public void openTransactionActivity(View view) {
+		Intent TransactionsIntent = new Intent(this, DisplayTransactionActivities.class);
+		startActivity(TransactionsIntent);
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

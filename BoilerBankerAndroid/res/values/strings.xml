@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Boiler Banker</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_name">Username:</string>
+    <string name="password">Password:</string>
+    <string name="login">Login</string>
+    <string name="offline_view">Offline View</string>
+    <string name="title_activity_display_offline_view">Offline View</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_display_welcome">Welcome</string>
+    <string name="transaction">Transactions</string>
+    <string name="budget">Budget</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Sign Out</string>
+    <string name="title_activity_display_settings_view">Settings</string>
+	<string name="offline_setting">Enable Offline View</string>
+	<string name="back">Back</string>
+    
+</resources>

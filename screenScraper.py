@@ -2,6 +2,7 @@ import urllib
 import urllib2
 import cookielib
 
+#Test server url information for testing scraper
 url = 'http://web.ics.purdue.edu/~powerst/systfp/login.php'
 destUrl = 'http://web.ics.purdue.edu/~powerst/systfp/home.php'
 
@@ -15,13 +16,13 @@ values = {'username' : username,
 jar = cookielib.CookieJar()
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
 
-#encode credentials
+#encode credentials to ready for GET request
 login_cred = urllib.urlencode(values)
 
-#log in to the guard url
+#Send a POST request to destination URL
 opener.open(url, login_cred)
 
-#retrieve desination URL HTML code
+#Send a GET request to destination URL
 reqPage = opener.open(destUrl)
 
 #store contents of destination URL

@@ -29,12 +29,3 @@ reqPage = opener.open(destUrl)
 content = reqPage.read()
 
 print content
-
-print ''
-print 'Encoded data:'
-print '----------------'
-print login_cred
-print ''
-print 'Cookies:'
-print '----------------'
-print jar

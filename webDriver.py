@@ -1,4 +1,4 @@
 import selenium
 
 name = "Shawn"
-print(name)
+print name

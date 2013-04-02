@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class DisplaySettingsViewActivity extends Activity {
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +19,7 @@ public class DisplaySettingsViewActivity extends Activity {
 	
 	public void backReturnWelcome(View view) {
 		finish();
-	}
-	
-	public void onCheckboxClicked(View view) {
-		// is view already checked?
-		boolean checked = ((MenuItem) view).isChecked();
-		if (checked) {
-			
-		} else {
-			
-		}
+		
 	}
 
 	/**

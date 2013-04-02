@@ -1,11 +1,10 @@
 package com.example.boilerbanker;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.support.v4.app.NavUtils;
 
 public class DisplayOfflineViewActivity extends Activity {
 
@@ -15,10 +14,6 @@ public class DisplayOfflineViewActivity extends Activity {
 		setContentView(R.layout.activity_display_offline_view);
 		// Show the Up button in the action bar.
 		setupActionBar();
-	}
-	
-	public void returnLogin(View view) {
-		finish();
 	}
 
 	/**

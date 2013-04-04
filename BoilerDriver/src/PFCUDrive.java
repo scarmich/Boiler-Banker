@@ -1,9 +1,13 @@
 	import java.util.List;
 
 	import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class PFCUDrive {
@@ -14,23 +18,38 @@ public class PFCUDrive {
 	        // The Firefox driver supports javascript 
 	        WebDriver driver = new FirefoxDriver();
 	        
-	        // Go to the Google Suggest home page
+	        // Go to the PFCU login page
 	        driver.get("https://homebanking.purduefed.com/OnlineBanking/Login.aspx");
 	        
-	        // Enter the query string "Cheese"
+	        // Enter username and select continue
 	        WebElement userField = driver.findElement(By.name("M$content$PCDZ$MC3DFOE$ctl00$LoginName"));
 	        userField.sendKeys("abravoset");
-	        
 	        WebElement logButton = driver.findElement(By.name("M$content$PCDZ$MC3DFOE$ctl00$cmdContinue"));
 	        logButton.click();
 	        
+	        //Enter the password and select login
 	        WebElement passField = driver.findElement(By.name("M$content$PCDZ$MF3KFEF$ctl00$Password"));
 	        passField.sendKeys("CS307project");
-	        
 	        WebElement passButton = driver.findElement(By.name("M$content$PCDZ$MF3KFEF$ctl00$cmdContinue"));
 	        passButton.click();
 	        
+	        //Once logged in, navigate to the account views
 	        driver.navigate().to("https://homebanking.purduefed.com/OnlineBanking/ViewAccounts/AccountActivity.aspx");
+	        
+	        //Select the proper account
+	        Select select = new Select(driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$selectedAccount")));
+	        select.selectByIndex(2);
+	        
+	        //Select past 90 days
+	        WebElement timeSelect = driver.findElement(By.id("M_content_PCDZ_M2SN6LC_ctl00_ClearedDateChoices_1"));
+	        timeSelect.click();
+	        
+	        //Click search
+	        WebElement search = driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$search"));
+	        search.click();
+	        
+	        
+	        
 	        // Sleep until the div we want is visible or 5 seconds is over
 	        /*
 	        long end = System.currentTimeMillis() + 5000;

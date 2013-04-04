@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
@@ -15,7 +17,25 @@ public class MainActivity extends Activity {
 	}
 	
 	public void openWelcome(View view) {
-		//Takes the user to the welcome screen
+		
+		/*
+		 * Grabs username and password credentials and saves them to login 
+		 * and password variables
+		 */
+		EditText usernameEditText = (EditText) this.findViewById(R.id.username_message);
+		String login = usernameEditText.getText().toString();
+		EditText passwordEditText = (EditText) this.findViewById(R.id.password_message);
+		String password = passwordEditText.getText().toString();
+		
+		/*
+		 * Needed: pass login and password strings to Server for login
+		 */
+		
+		
+		
+		/*
+		 * Once login is successful, open welcome screen
+		 */
 		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
 		startActivity(welcomeIntent);
 	}

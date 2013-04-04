@@ -33,6 +33,12 @@ public class PFCUDrive {
 	        WebElement passButton = driver.findElement(By.name("M$content$PCDZ$MF3KFEF$ctl00$cmdContinue"));
 	        passButton.click();
 	        
+	        //Handler for security questions
+	        if (!(driver.getCurrentUrl().equals("https://homebanking.purduefed.com/OnlineBanking/AccountSummary.aspx"))) {
+	        	System.out.println("Issue occured");
+	        	System.exit(0);
+	        }
+	        
 	        //Once logged in, navigate to the account views
 	        driver.navigate().to("https://homebanking.purduefed.com/OnlineBanking/ViewAccounts/AccountActivity.aspx");
 	        

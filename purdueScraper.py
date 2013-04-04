@@ -26,4 +26,6 @@ for item in soup.find_all('input'):
 			item.attrs['value'] = loginName
 		l.append({item.attrs['name'] : (item.attrs['value'] if 'value' in item.attrs else '')})	
 
-r2 = requests.post(loginUrl, params=l, headers=headers)
+print l
+
+r2 = requests.post(loginUrl, header=headers, params=l)

@@ -54,6 +54,13 @@ public class PFCUDrive {
 	        WebElement search = driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$search"));
 	        search.click();
 	        
+	        // Gets the page's HTML
+	        String htmlText = driver.getPageSource();
+	        // NEEDED: PASS HTML TO PARSER
+	        
+	        // Closes driver
+	        driver.close();
+	        
 	        
 	        
 	        // Sleep until the div we want is visible or 5 seconds is over

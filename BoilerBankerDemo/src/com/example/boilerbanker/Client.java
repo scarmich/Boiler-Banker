@@ -2,20 +2,19 @@ package com.example.boilerbanker;
 
 import java.io.*;
 import java.util.Scanner;
-
-import android.app.Activity;
 import android.content.Context;
 
 public class Client extends AbstractClient {
 
-	//Will hold five latest Transactions, from oldest to newest (0-4)
+	//Will hold all 50 transactions received from Server
 	private Transaction[] userTransactions;
 	private int currentBalance;
 	private String user;
 
-	public Client(String host, int port, String user) {
+	public Client(String host, int port) {
 		super(host, port);
-		this.user = user;
+		
+		user = "";
 		currentBalance = 0;
 		userTransactions = new Transaction[50];
 	}
@@ -26,6 +25,10 @@ public class Client extends AbstractClient {
 			return;
 		}
 		
+		userTransactions = (Transaction[]) msg;
+		
+		
+		//Need Seth to finish Server to really tell how to read what he sends
 		//currentBalance = msg.currentBalance;
 		//for(int i=0; msg.transactions[i] != null; i++){
 		//	userTransactions = msg.transactions[i];
@@ -38,7 +41,6 @@ public class Client extends AbstractClient {
 	//Latest trans first or last. 
 	//Set up file to store the last five. 
 	private void setNewLastFiveTransactions() {
-		//File f = new File(context.getFilesDir(), "transactions.txt");
 		String filename = user + "transactions";
 		FileOutputStream out;
 		try{
@@ -47,7 +49,7 @@ public class Client extends AbstractClient {
 			String line;
 			for(int i=0; i<5; i++){
 				if(userTransactions[i] != null){
-					line = userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount();
+					line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount();
 					out.write(line.getBytes());
 				}
 			}
@@ -62,7 +64,7 @@ public class Client extends AbstractClient {
 		}
 	}
 	
-	//Not finished. 
+
 	public Transaction[] getLastFiveTransactions(){
 		String filename = user + "transactions";
 		File f = new File(ApplicationContext.getMyApplicationContext().getFilesDir(), filename);
@@ -77,27 +79,26 @@ public class Client extends AbstractClient {
 		String delims = "[ ]";
 		String[] tokens;
 		
-		currentBalance = in.nextInt();
+		currentBalance = Integer.parseInt(in.nextLine());
 		for(int i=0; i<5; i++){
 			line = in.nextLine();
-			tokens = line.split(delims);
-			trans[i] = new Transaction(tokens[0], tokens[1], Integer.parseInt(tokens[2]));
+			if(line != null){
+				tokens = line.split(delims);
+				trans[i] = new Transaction(Integer.parseInt(tokens[0]), tokens[1], tokens[2], Integer.parseInt(tokens[3]));
+			}
 		}
 		return trans;
 	}
 	
-	public void handleMessageFromClientUI(String message)
-			{
-			  try
-			  {
-			    sendToServer(message);
-			  }
-			  catch(IOException e)
-			  {
-			    System.out.println("Client Error: Could not send message to server : " + e.toString());
-			    System.exit(-1);
-			  }
-			}
+	public void handleMessageFromUI(String message) {
+		try {
+		    sendToServer(message.toCharArray());
+		}
+		catch(IOException e)  {
+			System.out.println("Client Error: Could not send message to server : " + e.toString());
+		    System.exit(-1);
+		}
+	}
 
 	
 	public void setCurrentBalance(int bal) {
@@ -118,6 +119,30 @@ public class Client extends AbstractClient {
 	
 	public Transaction[] getTransactions() {
 		return userTransactions;
+	}
+	
+	//Provided for Testing purposes
+	public void main(String args[]){
+		Client client = new Client("data.cs.purdue.edu", 5555);
+		Transaction trans[] = new Transaction[50];
+		System.out.println("Old:");
+		for(int i=0;i < 50; i++){
+			trans[i] = new Transaction(i, "4/4/2013", "Walmart"+i, i*10);
+			System.out.println(trans[i].getId() + " " + trans[i].getDate() + " " + trans[i].getLocation() + " " + trans[i].getAmount());
+		}
+
+		int current = 200;
+		client.setUser("test");
+		client.setCurrentBalance(current);
+		
+		client.handleMessageFromServer((Object)trans);
+		
+		Transaction newTrans[] = new Transaction[5];
+		newTrans = client.getLastFiveTransactions();
+		System.out.println("New:");
+		for(int i=0;i < 5; i++){
+			System.out.println(newTrans[i].getId() + " " + newTrans[i].getDate() + " " + newTrans[i].getLocation() + " " + newTrans[i].getAmount());
+		}
 	}
 }
 

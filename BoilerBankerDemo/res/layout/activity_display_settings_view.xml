@@ -9,23 +9,32 @@
     tools:context=".DisplaySettingsViewActivity" >
 
     <CheckBox
-        android:id="@+id/checkBox1"
+        android:id="@+id/offlineCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="142dp"
-        android:text="@string/offline_setting"
-        android:onClick="onCheckboxClicked" />
+        android:text="@string/offline_setting" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/back_button"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox1"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/back"
-        android:onClick="backReturnWelcome" />
+        android:layout_marginBottom="105dp"
+        android:onClick="backReturnWelcome"
+        android:text="@string/back" />
+
+    <Button
+        android:id="@+id/save_changes"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/back_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="@string/settings_save" 
+        android:onClick = "saveChanges" />
 
 </RelativeLayout>

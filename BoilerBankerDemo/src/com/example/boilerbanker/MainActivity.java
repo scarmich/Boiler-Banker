@@ -50,16 +50,40 @@ public class MainActivity extends Activity {
 		String password = passwordEditText.getText().toString();
 		
 		/*
-		 * Needed: pass login and password strings to Server for login
+		 * Sets up an alert dialog to be used if the user forgets to enter a username,
+		 * password, or both. The client will only contact the server if both are filled.
 		 */
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("UH OH!");
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				return;
+			}
+		});
 		
-		
-		
-		/*
-		 * Once login is successful, open welcome screen
-		 */
-		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-		startActivity(welcomeIntent);
+		if (login.equals("") && password.equals("")) {
+			alertDialog.setMessage("You need to enter a username and password to login!");
+			alertDialog.show();
+		} else if (login.equals("")) {
+			alertDialog.setMessage("You need to enter a username to login!");
+			alertDialog.show();
+		} else if (password.equals("")) {
+			alertDialog.setMessage("You need to enter a password to login!");
+			alertDialog.show();
+		} else {
+			
+			/*
+			 * Needed: pass login and password strings to Server for login
+			 */
+			
+			
+			
+			/*
+			 * Once login is successful, open welcome screen
+			 */
+			Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
+			startActivity(welcomeIntent);
+		}
 	}
 
 	@Override

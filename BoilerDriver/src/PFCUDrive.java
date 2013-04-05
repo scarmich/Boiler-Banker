@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.python.util.PythonInterpreter;
+import org.python.core.*;
 
 
 public class PFCUDrive {
@@ -61,7 +62,7 @@ public class PFCUDrive {
 	        // NEEDED: PASS HTML TO PARSER
 	        
 	        // Closes driver
-	        driver.close();
+	        //driver.close();
 	        
 	        /*
 	         * Calls python parsing method through the creation of a
@@ -69,6 +70,7 @@ public class PFCUDrive {
 	         * more code to come
 	         */
 	        PythonInterpreter pi = new PythonInterpreter();
+	        
 	        
 	        
 	        

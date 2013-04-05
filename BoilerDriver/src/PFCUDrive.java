@@ -1,5 +1,6 @@
 	import java.util.List;
 
+
 	import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.python.util.PythonInterpreter;
 
 
 public class PFCUDrive {
@@ -60,6 +62,14 @@ public class PFCUDrive {
 	        
 	        // Closes driver
 	        driver.close();
+	        
+	        /*
+	         * Calls python parsing method through the creation of a
+	         * python interpreter
+	         * more code to come
+	         */
+	        PythonInterpreter pi = new PythonInterpreter();
+	        
 	        
 	        
 	        

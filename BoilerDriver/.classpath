@@ -41,5 +41,6 @@
 	<classpathentry kind="lib" path="/Users/Drewberson/github/Boiler-Banker/selenium-2.31.0/selenium-2.31.0/libs/cglib-nodep-2.1_3.jar"/>
 	<classpathentry kind="lib" path="/Users/Drewberson/github/Boiler-Banker/selenium-2.31.0/selenium-2.31.0/libs/commons-codec-1.6.jar"/>
 	<classpathentry kind="lib" path="/Users/Drewberson/github/Boiler-Banker/selenium-2.31.0/selenium-2.31.0/libs/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Drewberson/github/Boiler-Banker/jython/jython-2.5.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

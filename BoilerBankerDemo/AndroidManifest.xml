@@ -55,6 +55,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
         </activity>
+        <activity android:name="com.example.boilerbanker.DisplayBudgetActivity"></activity>
     </application>
 
 </manifest>

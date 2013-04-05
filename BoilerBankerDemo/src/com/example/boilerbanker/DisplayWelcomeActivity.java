@@ -24,6 +24,11 @@ public class DisplayWelcomeActivity extends Activity {
 		startActivity(TransactionsIntent);
 	}
 	
+	public void openBudgetActivity(View view) {
+		Intent BudgetIntent = new Intent(this, DisplayBudgetActivity.class);
+		startActivity(BudgetIntent);
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -27,5 +27,6 @@
     <string name="TransactionTitle">Transactions</string>
     <string name="title_activity_display_transaction_activities">Transactions</string>
     <string name="title_activity_display_budget">Budget</string>
+    <string name="settings_save">Save Settings</string>
 
 </resources>

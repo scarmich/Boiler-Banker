@@ -45,7 +45,7 @@ public class DisplayBudgetActivity extends Activity implements
 		goButton = (Button) findViewById(R.id.budgetGoButton);
 		dateField.setHint("Enter date range here");
 		
-
+		
 		Transaction trans1 = new Transaction(001, "3/1/2013", "Walmart", 168.9);
 		Transaction trans2 = new Transaction(002, "3/5/2013", "Gas", 46.69);
 		Transaction trans3 = new Transaction(003, "3/19/2013", "Applebees", 24.99);
@@ -56,7 +56,20 @@ public class DisplayBudgetActivity extends Activity implements
 		transactions.add(trans3);
 		transactions.add(trans4);
 		transactions.add(trans5);
-		
+		/*
+		Transaction [] trans;
+		try {
+			trans = MainActivity.getClient().getTransactions();
+		} catch(Exception e) {
+			if(MainActivity.getClient() == null) {
+				System.out.println("Client was null");
+			}
+			trans = new Transaction[0];
+		}
+		for(int i = 0; i < trans.length; i++) {
+			transactions.add(trans[i]);
+		}
+		*/
 		displayData(transactions);
 	}
 
@@ -85,7 +98,7 @@ public class DisplayBudgetActivity extends Activity implements
 	
 	public void displayData(ArrayList<Transaction> transactions) {		
 		WebView webView = (WebView)findViewById(R.id.webView1);
-		String url = "https://chart.googleapis.com/chart?cht=p3&chs=400x175&chd=t:";
+		String url = "https://chart.googleapis.com/chart?cht=p3&chs=300x275&chd=t:";
 		double totalSpent = 0;
 		for(int i = 0; i < transactions.size(); i++) {
 			totalSpent += transactions.get(i).getAmount();
@@ -94,7 +107,7 @@ public class DisplayBudgetActivity extends Activity implements
 			url += (int)(100* transactions.get(i).getAmount() / totalSpent);
 			if(i < transactions.size() - 1) url += ",";			
 		}
-		url += "&chl=";
+		url += "&chdlp=bv&chdl=";
 		for(int i = 0; i < transactions.size(); i++) {
 			String location = transactions.get(i).getLocation();
 			while(location.contains(" ")) {

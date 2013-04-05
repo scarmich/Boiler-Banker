@@ -13,6 +13,8 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 	
+	private static Client client;
+	
 	public void openOfflineView(View view) {
 		// Checks to see if OfflineView is enabled
 		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
@@ -61,6 +63,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		
 		if (login.equals("") && password.equals("")) {
 			alertDialog.setMessage("You need to enter a username and password to login!");
 			alertDialog.show();
@@ -90,6 +93,25 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+	}
+	
+	public static Client getClient() {
+		if(client == null) {
+			client = new Client("data.cs.purdue.edu", 5555);
+			Transaction trans[] = new Transaction[50];
+			for(int i=0;i < 15; i++){
+				trans[i] = new Transaction(i, "4/" + i + "/2013", "Walmart"+i, i*10);
+			}
+
+			int current = 200;
+			client.setUser("test");
+			client.setCurrentBalance(current);
+			
+			client.setTransactions(trans);
+			
+			//client.handleMessageFromServer((Object)trans);
+		}
+		return client;
 	}
 
 	@Override

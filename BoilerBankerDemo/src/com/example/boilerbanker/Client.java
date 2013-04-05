@@ -64,6 +64,14 @@ public class Client extends AbstractClient {
 		}
 	}
 	
+	/**
+	 * Temp method for manually setting transactions with hard coded data
+	 * @param trans Transaction array to set as the transactions
+	 */
+	public void setTransactions(Transaction[] trans) {
+		userTransactions = trans;
+	}
+	
 
 	public Transaction[] getLastFiveTransactions(){
 		String filename = user + "transactions";

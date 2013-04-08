@@ -49,17 +49,37 @@ public class MainActivity extends Activity {
 		EditText passwordEditText = (EditText) this.findViewById(R.id.password_message);
 		String password = passwordEditText.getText().toString();
 		
-		/*
-		 * Needed: pass login and password strings to Server for login
-		 */
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("UH OH!");
+
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				return;
+			}
+		});
 		
-		
-		
-		/*
-		 * Once login is successful, open welcome screen
-		 */
-		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-		startActivity(welcomeIntent);
+		if (login.equals("") && password.equals("")) {
+			alertDialog.setMessage("Enter your login and password first!");
+			alertDialog.show();
+		} else if (login.equals("")) {
+			alertDialog.setMessage("Enter your login first!");
+			alertDialog.show();
+		} else if (password.equals("")) {
+			alertDialog.setMessage("Enter your password first!");
+			alertDialog.show();
+		} else {
+			/*
+			 * Needed: pass login and password strings to Server for login
+			 */
+			
+			
+			
+			/*
+			 * Once login is successful, open welcome screen
+			 */
+			Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
+			startActivity(welcomeIntent);
+		}
 	}
 
 	@Override

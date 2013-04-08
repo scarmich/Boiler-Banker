@@ -1,4 +1,9 @@
-	import java.util.List;
+	import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.util.List;
 
 
 	import org.openqa.selenium.By;
@@ -9,8 +14,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.python.util.PythonInterpreter;
-import org.python.core.*;
 
 
 public class PFCUDrive {
@@ -62,16 +65,11 @@ public class PFCUDrive {
 	        // NEEDED: PASS HTML TO PARSER
 	        
 	        // Closes driver
-	        //driver.close();
+	        driver.close();
 	        
-	        /*
-	         * Calls python parsing method through the creation of a
-	         * python interpreter
-	         * more code to come
-	         */
-	        PythonInterpreter pi = new PythonInterpreter();
-	        
-	        
+	        FileWriter file = new FileWriter("htmlText.txt");
+	        PrintWriter output = new PrintWriter(file);
+	        output.println(htmlText);
 	        
 	        
 	        

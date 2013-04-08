@@ -27,32 +27,30 @@ public class Client extends AbstractClient {
 		}
 		
 		userTransactions = (Transaction[]) msg;
-		
-		
-		//Need Seth to finish Server to really tell how to read what he sends
-		//currentBalance = msg.currentBalance;
-		//for(int i=0; msg.transactions[i] != null; i++){
-		//	userTransactions = msg.transactions[i];
-		//}
+ 		
+ 		
+        //Need Seth to finish Server to really tell how to read what he sends
+        //currentBalance = msg.currentBalance;
+        //for(int i=0; msg.transactions[i] != null; i++){
+        //	userTransactions = msg.transactions[i];
+        //}
 		
 		setNewLastFiveTransactions();
 	}
 	
-	//Dependent upon how Seth develops the data structure sent. 
-	//Latest trans first or last. 
-	//Set up file to store the last five. 
+	//Latest transactions first. 
+	//Set up file to store the latest five. 
 	private void setNewLastFiveTransactions() {
-		String filename = user + "transactions";
+		String filename = userName + "transactions";
 		FileOutputStream out;
 		try{
-			out = ApplicationContext.getMyApplicationContext().openFileOutput(filename, Context.MODE_PRIVATE);
-			out.write(currentBalance);
 			String line;
-			for(int i=0; i<5; i++){
-				if(userTransactions[i] != null){
-					line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount();
-					out.write(line.getBytes());
-				}
+			out = ApplicationContext.getMyApplicationContext().openFileOutput(filename, Context.MODE_PRIVATE);
+			line = String.valueOf(currentBalance) + "\n";
+			out.write(line.getBytes());
+			for(int i=0; i<5 && i<numTransactions; i++){
+				line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount() + "\n";
+				out.write(line.getBytes());
 			}
 			
 			out.close();
@@ -88,6 +86,7 @@ public class Client extends AbstractClient {
 				trans[i] = new Transaction(Integer.parseInt(tokens[0]), tokens[1], tokens[2], Integer.parseInt(tokens[3]));
 			}
 		}
+		
 		return trans;
 	}
 	

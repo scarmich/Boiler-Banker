@@ -11,12 +11,13 @@ public class Client extends AbstractClient {
 	private int currentBalance;
 	private String user;
 
-	public Client(String host, int port) {
+	public Client(String host, int port) throws IOException {
 		super(host, port);
 		
 		user = "";
 		currentBalance = 0;
 		userTransactions = new Transaction[50];
+		openConnection();
 	}
 	
 	protected void handleMessageFromServer(Object msg) {
@@ -64,14 +65,6 @@ public class Client extends AbstractClient {
 		}
 	}
 	
-	/**
-	 * Temp method for manually setting transactions with hard coded data
-	 * @param trans Transaction array to set as the transactions
-	 */
-	public void setTransactions(Transaction[] trans) {
-		userTransactions = trans;
-	}
-	
 
 	public Transaction[] getLastFiveTransactions(){
 		String filename = user + "transactions";
@@ -98,6 +91,11 @@ public class Client extends AbstractClient {
 		return trans;
 	}
 	
+	public void sendUserCredentials(String user, String password) {
+		String together = user + " " + password;
+		handleMessageFromUI(together);
+	}
+	
 	public void handleMessageFromUI(String message) {
 		try {
 		    sendToServer(message.toCharArray());
@@ -117,6 +115,14 @@ public class Client extends AbstractClient {
 		this.user = user;
 	}
 	
+	/**
+	 * 	 * Temp method for manually setting transactions with hard coded data
+	 * @param trans Transaction array to set as the transactions
+	 */
+	public void setTransactions(Transaction[] trans) {
+		userTransactions = trans;
+	}
+	
 	public int getCurrentBalance(){
 		return currentBalance;
 	}
@@ -131,6 +137,7 @@ public class Client extends AbstractClient {
 	
 	//Provided for Testing purposes
 	public void main(String args[]){
+		/*
 		Client client = new Client("data.cs.purdue.edu", 5555);
 		Transaction trans[] = new Transaction[50];
 		System.out.println("Old:");
@@ -151,6 +158,7 @@ public class Client extends AbstractClient {
 		for(int i=0;i < 5; i++){
 			System.out.println(newTrans[i].getId() + " " + newTrans[i].getDate() + " " + newTrans[i].getLocation() + " " + newTrans[i].getAmount());
 		}
+		*/
 	}
 }
 

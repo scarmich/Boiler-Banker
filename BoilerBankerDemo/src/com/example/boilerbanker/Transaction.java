@@ -1,6 +1,10 @@
 package com.example.boilerbanker;
 
-public class Transaction {
+import java.io.Serializable;
+
+public class Transaction implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	//Where the transaction was done
 	private String location;
 	private String date;
@@ -16,6 +20,13 @@ public class Transaction {
 		this.date = date;
 	}
 	
+	public Transaction() {
+		id = 0;
+		location = null;
+		amount = 0.0;
+		date = null;
+	}
+	
 	public String getLocation(){
 		return location;
 	}
@@ -28,7 +39,7 @@ public class Transaction {
 		return date;
 	}
 	
-	public int getId() {
+	public int getId(){
 		return id;
 	}
 }

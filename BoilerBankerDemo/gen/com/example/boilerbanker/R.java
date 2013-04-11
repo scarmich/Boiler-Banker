@@ -33,7 +33,6 @@ public final class R {
         public static final int back_button=0x7f08000e;
         public static final int budget_button=0x7f080017;
         public static final int button1=0x7f080008;
-        public static final int checkBox1=0x7f080009;
         public static final int dateField=0x7f080000;
         public static final int edit_button1=0x7f080011;
         public static final int edit_button2=0x7f080012;
@@ -44,6 +43,7 @@ public final class R {
         public static final int log_out=0x7f08000f;
         public static final int login_button=0x7f08001f;
         public static final int logout_button=0x7f080019;
+        public static final int offlineCheckbox=0x7f080009;
         public static final int offline_button=0x7f08001e;
         public static final int passwordTextView=0x7f08001b;
         public static final int password_message=0x7f08001d;

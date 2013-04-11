@@ -8,13 +8,14 @@ public class Client extends AbstractClient {
 
 	//Will hold all 50 transactions received from Server
 	private Transaction[] userTransactions;
-	private int currentBalance;
-	private String user;
+	private double currentBalance;
+	private String userName;
+	private int numTransactions;
 
 	public Client(String host, int port) throws IOException {
 		super(host, port);
 		
-		user = "";
+		userName = "";
 		currentBalance = 0;
 		userTransactions = new Transaction[50];
 		openConnection();
@@ -26,14 +27,11 @@ public class Client extends AbstractClient {
 			return;
 		}
 		
-		userTransactions = (Transaction[]) msg;
- 		
- 		
-        //Need Seth to finish Server to really tell how to read what he sends
-        //currentBalance = msg.currentBalance;
-        //for(int i=0; msg.transactions[i] != null; i++){
-        //	userTransactions = msg.transactions[i];
-        //}
+		User user = (User) msg;
+		userName = user.getUsername();
+		currentBalance = user.getBalance();
+		userTransactions = user.getTransactions();
+		numTransactions = user.getNumTransactions();
 		
 		setNewLastFiveTransactions();
 	}
@@ -65,7 +63,7 @@ public class Client extends AbstractClient {
 	
 
 	public Transaction[] getLastFiveTransactions(){
-		String filename = user + "transactions";
+		String filename = userName + "transactions";
 		File f = new File(ApplicationContext.getMyApplicationContext().getFilesDir(), filename);
 		Scanner in = null;
 		try{
@@ -79,11 +77,18 @@ public class Client extends AbstractClient {
 		String[] tokens;
 		
 		currentBalance = Integer.parseInt(in.nextLine());
-		for(int i=0; i<5; i++){
+		for(int i=0; i<5 && i<numTransactions; i++){
 			line = in.nextLine();
 			if(line != null){
 				tokens = line.split(delims);
-				trans[i] = new Transaction(Integer.parseInt(tokens[0]), tokens[1], tokens[2], Integer.parseInt(tokens[3]));
+				trans[i] = new Transaction(Integer.parseInt(tokens[0]), tokens[1], tokens[2], Double.parseDouble(tokens[3]));
+			}
+		}
+		
+		//In case the number of transactions is too small, use default constructor
+		if (numTransactions < 5){
+			for(int i=numTransactions; i<5; i++){
+				trans[i] = new Transaction();
 			}
 		}
 		
@@ -111,7 +116,7 @@ public class Client extends AbstractClient {
 	}
 	
 	public void setUser(String user) {
-		this.user = user;
+		this.userName = user;
 	}
 	
 	/**
@@ -122,12 +127,12 @@ public class Client extends AbstractClient {
 		userTransactions = trans;
 	}
 	
-	public int getCurrentBalance(){
+	public double getCurrentBalance(){
 		return currentBalance;
 	}
 	
 	public String getUser(){
-		return user;
+		return userName;
 	}
 	
 	public Transaction[] getTransactions() {

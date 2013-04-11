@@ -1,4 +1,4 @@
-.DS_Store
+*.DS_Store
 .AppleDouble
 .LSOverride
 Icon
@@ -12,3 +12,13 @@ Icon
 .Trashes
 
 BoilerBankerDemo/.DS_Store~HEAD
+
+BoilerBankerAndroid/.DS_Store
+
+BoilerBankerAndroid/.DS_Store
+
+BoilerBankerAndroid/.DS_Store
+
+BoilerDriver/.DS_Store
+
+selenium-2.31.0/.DS_Store

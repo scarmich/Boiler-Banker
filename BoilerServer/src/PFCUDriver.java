@@ -64,6 +64,7 @@ public class PFCUDriver {
         
         // NEEDED: PASS HTML TO PARSER
         PythonInterpreter pi = new PythonInterpreter();
+        pi.execfile("webParser.py");
         
         // Closes driver
         driver.close();

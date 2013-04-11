@@ -1,12 +1,13 @@
 package com.example.boilerbanker;
 
-import java.io.*;
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Scanner;
-import android.content.Context;
 
 public class Client extends AbstractClient {
 
-	//Will hold all 50 transactions received from Server
+	//Will hold five latest Transactions, from oldest to newest (0-4)
+	private Transaction[] fiveLastTransactions;
 	private Transaction[] userTransactions;
 	private double currentBalance;
 	private String userName;
@@ -14,9 +15,14 @@ public class Client extends AbstractClient {
 
 	public Client(String host, int port) throws IOException {
 		super(host, port);
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 		
 		userName = "";
+=======
+		user = "";
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 		currentBalance = 0;
+		fiveLastTransactions = new Transaction[5];
 		userTransactions = new Transaction[50];
 		openConnection();
 	}
@@ -27,11 +33,18 @@ public class Client extends AbstractClient {
 			return;
 		}
 		
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 		User user = (User) msg;
 		userName = user.getUsername();
 		currentBalance = user.getBalance();
 		userTransactions = user.getTransactions();
 		numTransactions = user.getNumTransactions();
+=======
+		//currentBalance = msg.currentBalance;
+		//for(int i=0; msg.transactions[i] != null; i++){
+		//	userTransactions = msg.transactions[i];
+		//}
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 		
 		setNewLastFiveTransactions();
 	}
@@ -39,6 +52,7 @@ public class Client extends AbstractClient {
 	//Latest transactions first. 
 	//Set up file to store the latest five. 
 	private void setNewLastFiveTransactions() {
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 		String filename = userName + "transactions";
 		FileOutputStream out;
 		try{
@@ -57,25 +71,45 @@ public class Client extends AbstractClient {
 			System.exit(-1);
 		}catch(IOException e){
 			System.out.println("Client Error: Couldn't write files : " + e.toString());
+=======
+		File f = new File("transactions.txt");
+		PrintWriter out = null;
+		try{
+			out = new PrintWriter(f);
+		}catch(Exception e){
+			System.out.println("Error: Couldn't open transaction file :" + e.toString());
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 			System.exit(-1);
 		}
+		
+		out.println(currentBalance);
+		for(int i=0; i<5; i++){
+			if(userTransactions[i] != null){
+				out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
+			}
+		}
+		
+		out.close();
 	}
 	
-
+	//Not finished. 
 	public Transaction[] getLastFiveTransactions(){
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 		String filename = userName + "transactions";
 		File f = new File(ApplicationContext.getMyApplicationContext().getFilesDir(), filename);
+=======
+		File f = new File("transactions.txt");
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 		Scanner in = null;
 		try{
 			in = new Scanner(f);
 		}catch(Exception e){
-			System.out.println("Client Error: Couldn't open transaction file or Scanner for reading :" + e.toString());
+			System.out.println("Error: Couldn't open transaction file :" + e.toString());
 		}
 		Transaction[] trans = new Transaction[5];
 		String line;
-		String delims = "[ ]";
-		String[] tokens;
 		
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 		currentBalance = Integer.parseInt(in.nextLine());
 		for(int i=0; i<5 && i<numTransactions; i++){
 			line = in.nextLine();
@@ -90,11 +124,18 @@ public class Client extends AbstractClient {
 			for(int i=numTransactions; i<5; i++){
 				trans[i] = new Transaction();
 			}
+=======
+		currentBalance = in.nextInt();
+		for(int i=0; i<5; i++){
+			line = in.nextLine();
+			
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 		}
 		
 		return trans;
 	}
 	
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 	public void sendUserCredentials(String user, String password) {
 		String together = user + " " + password;
 		handleMessageFromUI(together);
@@ -111,6 +152,8 @@ public class Client extends AbstractClient {
 	}
 
 	
+=======
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 	public void setCurrentBalance(int bal) {
 		this.currentBalance = bal;
 	}
@@ -131,14 +174,20 @@ public class Client extends AbstractClient {
 		return currentBalance;
 	}
 	
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 	public String getUser(){
 		return userName;
+=======
+	public String user(){
+		return user;
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 	}
 	
 	public Transaction[] getTransactions() {
-		return userTransactions;
+		return fiveLastTransactions;
 	}
 	
+<<<<<<< HEAD:BoilerBankerFix/src/com/example/boilerbanker/Client.java
 	//Provided for Testing purposes
 	public void main(String args[]){
 		/*
@@ -163,6 +212,14 @@ public class Client extends AbstractClient {
 			System.out.println(newTrans[i].getId() + " " + newTrans[i].getDate() + " " + newTrans[i].getLocation() + " " + newTrans[i].getAmount());
 		}
 		*/
+=======
+	public void printTransactions(){
+		System.out.println("User: " + user);
+		for(int i=0; i<5 || fiveLastTransactions[i] == null; i++){
+			System.out.println(i + ": " + fiveLastTransactions[i]);
+		}
+		System.out.println("Balance: " + currentBalance);
+>>>>>>> parent of 48decf3... Merge branch 'master' of https://github.com/scarmich/Boiler-Banker:BoilerBankerAndroid/src/com/example/boilerbanker/Client.java
 	}
 }
 

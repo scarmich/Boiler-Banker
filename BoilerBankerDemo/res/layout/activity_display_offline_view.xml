@@ -59,7 +59,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/offline_back_button"
+        android:id="@+id/button1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"

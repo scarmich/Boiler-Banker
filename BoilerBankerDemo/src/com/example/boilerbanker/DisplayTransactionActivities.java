@@ -6,10 +6,8 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 public class DisplayTransactionActivities extends Activity {
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +15,6 @@ public class DisplayTransactionActivities extends Activity {
 		setContentView(R.layout.activity_display_transaction_activities);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		TextView t1 = (TextView) findViewById(R.id.Transaction1);
-		t1.setText("Chipotle");
 	}
 	
 	public void backReturnWelcome(View view) {

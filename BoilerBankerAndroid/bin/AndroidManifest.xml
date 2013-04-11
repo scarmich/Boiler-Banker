@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.boilerbanker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.boilerbanker.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.boilerbanker.DisplayOfflineViewActivity"
+            android:label="@string/title_activity_display_offline_view"
+            android:parentActivityName="com.example.boilerbanker.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.boilerbanker.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.boilerbanker.DisplayWelcomeActivity"
+            android:label="@string/title_activity_display_welcome"
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.boilerbanker.DisplaySettingsViewActivity"
+            android:label="@string/title_activity_display_settings_view"
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
+        </activity>
+        <activity
+            android:name="com.example.boilerbanker.DisplayTransactionActivities"
+            android:label="@string/title_activity_display_transaction_activities"
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
+        </activity>
+    </application>
+
+</manifest>

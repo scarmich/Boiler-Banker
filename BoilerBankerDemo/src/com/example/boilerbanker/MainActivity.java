@@ -1,5 +1,7 @@
 package com.example.boilerbanker;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
@@ -38,13 +41,44 @@ public class MainActivity extends Activity {
 	}
 	
 	public void openWelcome(View view) {
-		//Takes the user to the welcome screen
+		// Alert message set up
+		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+		alertDialog.setTitle("UH OH!");
+		alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				return;
+			}
+		});
+		
 		
 		// Saves username and password to strings
+		TextView userName = (TextView) findViewById(R.id.usernameTextView);
+		TextView password = (TextView) findViewById(R.id.passwordTextView);
 		
+		String user = userName.getText().toString();
+		String pass = password.getText().toString();
 		
-		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-		startActivity(welcomeIntent);
+		if (user.equals("") && pass.equals("")) {
+			
+		} else if (user.equals("")) {
+			
+		} else if (pass.equals("")) {
+			
+		} else {
+			try {
+				Client client = new Client("data.cs.purdue.edu", 5002);
+				client.sendUserCredentials(user, pass);
+				Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
+				startActivity(welcomeIntent);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				alertDialog.setMessage("Failed to connect to server");
+				alertDialog.show();
+			}
+			
+			
+		}
 	}
 
 	@Override

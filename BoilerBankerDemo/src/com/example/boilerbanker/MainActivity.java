@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 	
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 				}
 	}
 	
-	public void openWelcome(View view) {
+	public void openWelcome(View view) throws IOException  {
 		// Alert message set up
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
 		alertDialog.setTitle("UH OH!");
@@ -52,31 +52,35 @@ public class MainActivity extends Activity {
 		
 		
 		// Saves username and password to strings
-		TextView userName = (TextView) findViewById(R.id.usernameTextView);
-		TextView password = (TextView) findViewById(R.id.passwordTextView);
-		
-		String user = userName.getText().toString();
-		String pass = password.getText().toString();
+		EditText userText = (EditText) findViewById(R.id.username_message);
+		EditText passText = (EditText) findViewById(R.id.password_message);
+		final String user = userText.getText().toString();
+		final String pass = passText.getText().toString();
 		
 		if (user.equals("") && pass.equals("")) {
-			
+			alertDialog.setMessage("Please enter a username and password");
+			alertDialog.show();
 		} else if (user.equals("")) {
-			
+			alertDialog.setMessage("Please enter a username");
+			alertDialog.show();
 		} else if (pass.equals("")) {
-			
+			alertDialog.setMessage("Please enter a password");
+			alertDialog.show();
 		} else {
-			try {
-				Client client = new Client("data.cs.purdue.edu", 5002);
-				client.sendUserCredentials(user, pass);
-				Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-				startActivity(welcomeIntent);
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				alertDialog.setMessage("Failed to connect to server");
-				alertDialog.show();
-			}
-			
+			Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
+			startActivity(welcomeIntent);
+			Thread thread = new Thread() {
+				public void run() {
+					try {
+						Client client = new Client("moore06.cs.purdue.edu", 5002);
+						client.sendUserCredentials(user, pass);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			};
+			thread.start();
 			
 		}
 	}

@@ -2,6 +2,7 @@ package com.example.boilerbanker;
 
 import java.io.*;
 import java.net.*;
+import java.net.Socket;
 
 //This file contains material supporting section 3.7 of the textbook:
 //"Object Oriented Software Engineering" and is issued under the open-source
@@ -103,9 +104,17 @@ public abstract class AbstractClient implements Runnable {
 
 		// Create the sockets and the data streams
 		try {
+			System.out.println("Host:");
+			System.out.println("Host:" + host);
+			System.out.println("Port:");
+			System.out.println("Port:" + port);
+			System.out.println("Making clientSocket");
 			clientSocket = new Socket(host, port);
+			System.out.println("clientSocket made");
 			output = new ObjectOutputStream(clientSocket.getOutputStream());
+			System.out.println("output made");
 			input = new ObjectInputStream(clientSocket.getInputStream());
+			System.out.println("input made");
 		} catch (IOException ex)
 		// All three of the above must be closed when there is a failure
 		// to create any of them

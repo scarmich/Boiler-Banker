@@ -102,7 +102,7 @@ public class Client extends AbstractClient {
 	
 	public void handleMessageFromUI(String message) {
 		try {
-		    sendToServer(message.toCharArray());
+		    sendToServer((Object)message);
 		}
 		catch(IOException e)  {
 			System.out.println("Client Error: Could not send message to server : " + e.toString());

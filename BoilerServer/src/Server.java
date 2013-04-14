@@ -32,6 +32,8 @@ public class Server extends AbstractServer {
   		String[] tokens = message.split(delims);
   		String userName = tokens[0];
   		String password = tokens[1];
+  		System.out.println(userName);
+  		System.out.println(password);
   		
   		try {
 			PFCUDriver driver = new PFCUDriver(userName, password);

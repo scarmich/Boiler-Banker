@@ -64,7 +64,7 @@ public class PFCUDriver {
         
         // NEEDED: PASS HTML TO PARSER
         PythonInterpreter pi = new PythonInterpreter();
-        pi.execfile("webParser.py");
+        //pi.execfile("webParser.py");
         
         // Closes driver
         driver.close();
@@ -73,6 +73,6 @@ public class PFCUDriver {
 
 	
 	public static void main(String [] args) throws IOException {
-		
+		new PFCUDriver("abravoset", "CS307project");
 	}
 }

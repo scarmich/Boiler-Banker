@@ -2,11 +2,18 @@ from HTMLParser import HTMLParser
 
 class MyHTMLParser(HTMLParser):
    def handle_starttag(self, tag, attrs):
-      print "Encountered a start tag:", tag
-   def handle_endtag(self, tag):
-      print "Encountered an end tag :", tag
-   def handle_data(self, data):
-      print "Encountered some data  :", data
+	  if tag in ['table']:
+		print "Found transaction"
+   
+  # def handle_endtag(self, tag):
+   #   print 'endtag: ', tag
+  # def handle_data(self, data):
+ #     print 'data: ', data
+
+f = open('../transInfo.txt', 'r')
+data = f.read()
 
 parser = MyHTMLParser()
-parser.feed('<html><body><input>Transaction Data</input></body></html>')
+parser.feed(data)
+linenum = parser.getpos()
+print linenum

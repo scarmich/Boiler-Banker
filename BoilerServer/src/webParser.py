@@ -2,7 +2,7 @@ from HTMLParser import HTMLParser
 
 class MyHTMLParser(HTMLParser):
    def handle_starttag(self, tag, attrs):
-	  if tag in ['table']:
+	  if tag in ['ahref']:
 		print "Found transaction"
    
   # def handle_endtag(self, tag):

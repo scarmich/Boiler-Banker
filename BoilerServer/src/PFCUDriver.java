@@ -2,6 +2,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,19 +58,18 @@ public class PFCUDriver {
         String htmlText = driver.getPageSource();
         
         // Save String to text file
+        /*
         FileWriter file = new FileWriter("transInfo.txt");
         PrintWriter output = new PrintWriter(file);
         output.println(htmlText);
         output.close();
         file.close();
+        */
         
         // Closes Driver
         driver.close();
         
-        // NEEDED: PASS HTML TO PARSER
-        PythonInterpreter pi = new PythonInterpreter();
-        pi.execfile("src/webParser.py");
-
+        
 	}
 
 	

@@ -3,6 +3,8 @@ User = 'abravoset'
 
 # open a file in the UserTransaction folder with the <username>.txt as the filename
 f = open('UserTransactions/' + User + '.txt', 'w')
+f.write('Date -> Vender and Location -> Transaction Amount -> Current Accrued Balance\n')
+f.write('----------------------------------------------------------------------------\n')
 
 with open('../transInfo.txt') as input_data:
 	# Skips text before transaction data
@@ -16,10 +18,23 @@ with open('../transInfo.txt') as input_data:
 		if line.strip() == '<span id=\"M_content_PCDZ_MJ5DYII_ctl00_lblHtml\"><a href=\"/OnlineBanking/MCSClickService.aspx?ID=173&amp;ContentLocationID=14\"><img border=\"0\" src=\"/OnlineBanking/SqlImageViewerService.aspx?ID=267\" /></a></span>':
 			break
 		
-		# This is the actual parsing code
+		# Gets rid of unecessary table indentation lines
 		L = line.split()
 		cutwhitespace = len(L)
 		if cutwhitespace > 2:
-			f.write(line)
+
+			# ALL HAIL THE GLORY OF PYTHON STRINGS!
+			transactionDate = L[1][15:25]
+			accruedBalance = L[len(L)-1][14:-5]
+			transactionAmount = L[len(L)-2][L[len(L)-2].find("(")+1:L[len(L)-2].find(")")]
+			
+			# the transaction vender will also contain the location
+			# EG: McDonald's M6318(store number) West Lafayette IN
+
+			transactionVender = L[1][34:]
+			for x in range(2, len(L)-3):
+				transactionVender = transactionVender + '_' + L[x]
+
+			f.write(transactionDate + ' ' + transactionVender + ' ' + transactionAmount + ' ' + accruedBalance + '\n')
 
 f.close()

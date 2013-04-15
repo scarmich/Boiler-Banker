@@ -1,34 +1,36 @@
-		<td align="center">04/13/2013</td><td>COCA COLA LAFAYETTE IN 888-227-2653 IN    </td><td align="right">($1.50)</td><td>N/A</td><td>($1.50)</td><td align="right">$627.17</td>
-		<td align="center">04/13/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$625.67</td>
-		<td align="center">04/09/2013</td><td>LINS WOK WEST LAFAYETT IN    </td><td align="right">($40.18)</td><td>N/A</td><td>($40.18)</td><td align="right">$604.67</td>
-		<td align="center">04/08/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$564.49</td>
-		<td align="center">04/06/2013</td><td>COCA COLA LAFAYETTE IN 888-227-2653 IN    </td><td align="right">($1.50)</td><td>N/A</td><td>($1.50)</td><td align="right">$543.49</td>
-		<td align="center">04/04/2013</td><td>TACO BELL 336 WEST LAFAYETT IN    </td><td align="right">($7.47)</td><td>N/A</td><td>($7.47)</td><td align="right">$541.99</td>
-		<td align="center">04/03/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$534.52</td>
-		<td align="center">04/03/2013</td><td>WAL-MART #2339 WEST LAFAYETT IN    </td><td align="right">($16.63)</td><td>N/A</td><td>($16.63)</td><td align="right">$527.40</td>
-		<td align="center">04/01/2013</td><td>WALGREENS #6456 WEST LAFAYETT IN    </td><td align="right">($4.90)</td><td>N/A</td><td>($4.90)</td><td align="right">$510.77</td>
-		<td align="center">04/01/2013</td><td>WALGREENS #6456 WEST LAFAYETT IN    </td><td align="right">($4.26)</td><td>N/A</td><td>($4.26)</td><td align="right">$505.87</td>
-		<td align="center">04/01/2013</td><td>MCDONALD'S M6318 WEST LAFAYETT IN    </td><td align="right">($5.10)</td><td>N/A</td><td>($5.10)</td><td align="right">$501.61</td>
-		<td align="center">04/01/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$496.51</td>
-		<td align="center">03/29/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$475.51</td>
-		<td align="center">03/28/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$468.39</td>
-		<td align="center">03/27/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$461.27</td>
-		<td align="center">03/22/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($6.69)</td><td>N/A</td><td>($6.69)</td><td align="right">$454.15</td>
-		<td align="center">03/22/2013</td><td>MC FIESTA MEXICAN W. LAFAYETTE IN    </td><td align="right">($7.09)</td><td>N/A</td><td>($7.09)</td><td align="right">$447.46</td>
-		<td align="center">03/21/2013</td><td>PANDA EXPRESS #1695 WEST LAFAYETT IN    </td><td align="right">($8.86)</td><td>N/A</td><td>($8.86)</td><td align="right">$440.37</td>
-		<td align="center">03/21/2013</td><td>TACO BELL 336 WEST LAFAYETT IN    </td><td align="right">($3.73)</td><td>N/A</td><td>($3.73)</td><td align="right">$431.51</td>
-		<td align="center">03/20/2013</td><td>PANDA EXPRESS #1695 WEST LAFAYETT IN    </td><td align="right">($8.86)</td><td>N/A</td><td>($8.86)</td><td align="right">$427.78</td>
-		<td align="center">03/20/2013</td><td>MCDONALD'S M6318 WEST LAFAYETT IN    </td><td align="right">($3.40)</td><td>N/A</td><td>($3.40)</td><td align="right">$418.92</td>
-		<td align="center">03/19/2013</td><td>WABASH LANDING 9 WEST LAFAYETT IN    </td><td align="right">($6.75)</td><td>N/A</td><td>($6.75)</td><td align="right">$415.52</td>
-		<td align="center">03/18/2013</td><td>CVS PHARMACY #5768 Q03 CHICAGO IL    </td><td align="right">($20.00)</td><td>N/A</td><td>($20.00)</td><td align="right">$408.77</td>
-		<td align="center">03/18/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$388.77</td>
-		<td align="center">03/18/2013</td><td>HOT WOKS COOL SUSHI CHICAGO IL    </td><td align="right">($59.00)</td><td>N/A</td><td>($59.00)</td><td align="right">$381.65</td>
-		<td align="center">03/16/2013</td><td>MACY*S EAST #215 CHICAGO IL    </td><td align="right">($87.40)</td><td>N/A</td><td>($87.40)</td><td align="right">$322.65</td>
-		<td align="center">03/16/2013</td><td>TACO BELL 336 WEST LAFAYETT IN    </td><td align="right">($7.47)</td><td>N/A</td><td>($7.47)</td><td align="right">$235.25</td>
-		<td align="center">03/15/2013</td><td>BOB ROHRMAN HYUNDAI LAFAYETTE IN    </td><td align="right">($36.66)</td><td>N/A</td><td>($36.66)</td><td align="right">$227.78</td>
-		<td align="center">03/15/2013</td><td>WAL-MART #2339 WEST LAFAYETT IN    </td><td align="right">($18.16)</td><td>N/A</td><td>($18.16)</td><td align="right">$191.12</td>
-		<td align="center">03/15/2013</td><td>AUTOZONE #2586 W LAFAYETTE IN    </td><td align="right">($110.61)</td><td>N/A</td><td>($110.61)</td><td align="right">$172.96</td>
-		<td align="center">03/12/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($16.00)</td><td>N/A</td><td>($16.00)</td><td align="right">$62.35</td>
-		<td align="center">03/12/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$46.35</td>
-		<td align="center">03/11/2013</td><td>MCDONALD'S M6318 WEST LAFAYETT IN    </td><td align="right">($4.35)</td><td>N/A</td><td>($4.35)</td><td align="right">$25.35</td>
-		<td align="center">03/08/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$21.00</td>
+Date -> Vender and Location -> Transaction Amount -> Current Accrued Balance
+----------------------------------------------------------------------------
+04/13/2013 COCA_COLA_LAFAYETTE_IN_888-227-2653_IN $1.50 $627.17
+04/13/2013 GREEN_LEAF_VIETNAMESE_WEST_LAFAYETT_IN $21.00 $625.67
+04/09/2013 LINS_WOK_WEST_LAFAYETT_IN $40.18 $604.67
+04/08/2013 GREEN_LEAF_VIETNAMESE_WEST_LAFAYETT_IN $21.00 $564.49
+04/06/2013 COCA_COLA_LAFAYETTE_IN_888-227-2653_IN $1.50 $543.49
+04/04/2013 TACO_BELL_336_WEST_LAFAYETT_IN $7.47 $541.99
+04/03/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $7.12 $534.52
+04/03/2013 WAL-MART_#2339_WEST_LAFAYETT_IN $16.63 $527.40
+04/01/2013 WALGREENS_#6456_WEST_LAFAYETT_IN $4.90 $510.77
+04/01/2013 WALGREENS_#6456_WEST_LAFAYETT_IN $4.26 $505.87
+04/01/2013 MCDONALD'S_M6318_WEST_LAFAYETT_IN $5.10 $501.61
+04/01/2013 GREEN_LEAF_VIETNAMESE_WEST_LAFAYETT_IN $21.00 $496.51
+03/29/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $7.12 $475.51
+03/28/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $7.12 $468.39
+03/27/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $7.12 $461.27
+03/22/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $6.69 $454.15
+03/22/2013 MC_FIESTA_MEXICAN_W._LAFAYETTE_IN $7.09 $447.46
+03/21/2013 PANDA_EXPRESS_#1695_WEST_LAFAYETT_IN $8.86 $440.37
+03/21/2013 TACO_BELL_336_WEST_LAFAYETT_IN $3.73 $431.51
+03/20/2013 PANDA_EXPRESS_#1695_WEST_LAFAYETT_IN $8.86 $427.78
+03/20/2013 MCDONALD'S_M6318_WEST_LAFAYETT_IN $3.40 $418.92
+03/19/2013 WABASH_LANDING_9_WEST_LAFAYETT_IN $6.75 $415.52
+03/18/2013 CVS_PHARMACY_#5768_Q03_CHICAGO_IL $20.00 $408.77
+03/18/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $7.12 $388.77
+03/18/2013 HOT_WOKS_COOL_SUSHI_CHICAGO_IL $59.00 $381.65
+03/16/2013 MACY*S_EAST_#215_CHICAGO_IL $87.40 $322.65
+03/16/2013 TACO_BELL_336_WEST_LAFAYETT_IN $7.47 $235.25
+03/15/2013 BOB_ROHRMAN_HYUNDAI_LAFAYETTE_IN $36.66 $227.78
+03/15/2013 WAL-MART_#2339_WEST_LAFAYETT_IN $18.16 $191.12
+03/15/2013 AUTOZONE_#2586_W_LAFAYETTE_IN $110.61 $172.96
+03/12/2013 CHIPOTLE_0690_WEST_LAFAYETT_IN $16.00 $62.35
+03/12/2013 GREEN_LEAF_VIETNAMESE_WEST_LAFAYETT_IN $21.00 $46.35
+03/11/2013 MCDONALD'S_M6318_WEST_LAFAYETT_IN $4.35 $25.35
+03/08/2013 GREEN_LEAF_VIETNAMESE_WEST_LAFAYETT_IN $21.00 $21.00

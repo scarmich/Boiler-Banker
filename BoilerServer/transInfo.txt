@@ -16,7 +16,7 @@
 <input type="hidden" value="" id="__EVENTTARGET" name="__EVENTTARGET" />
 <input type="hidden" value="" id="__EVENTARGUMENT" name="__EVENTARGUMENT" />
 <input type="hidden" value="Off" id="UsePrinterFriendlyVersion" name="UsePrinterFriendlyVersion" />
-<input type="hidden" value="MTFiOGQxYmU5YTM5NDEyMWE2ODhmMTg1MzJkNjI1ZmZmMTdiMmNlYTU0ZTI0NTQ5YmE1ZWM2OTMzZWMyZTJhYw==" id="__VIEWSTATEID" name="__VIEWSTATEID" />
+<input type="hidden" value="MGJjMWZjYTc5ZjU3NGVjMGI5OTM3YThkNTVkMmU3ZjE2YTRjOTdmMzMzMjQ0MjZhYTkxNmI3ODhkNjNmYWQxOA==" id="__VIEWSTATEID" name="__VIEWSTATEID" />
 <input type="hidden" value="" id="__VIEWSTATE" name="__VIEWSTATE" />
 </div>
 
@@ -37,7 +37,7 @@ function __doPostBack(eventTarget, eventArgument) {
 </script>
 
 
-<script type="text/javascript" src="/OnlineBanking/WebResource.axd?d=6c8iSzKud332J0OL9SlQ2vcf14T-ViWauW5M8hYrDtTWHBLtNFhxkuM5BZkJ2HRSgnvnfy48X6ain8v5r9FaPJPrZYg1&amp;t=634840909855338750"></script>
+<script type="text/javascript" src="/OnlineBanking/WebResource.axd?d=6c8iSzKud332J0OL9SlQ2vcf14T-ViWauW5M8hYrDtTWHBLtNFhxkuM5BZkJ2HRSgnvnfy48X6ain8v5r9FaPJPrZYg1&amp;t=634840909430305000"></script>
 
 
 <script type="text/javascript" src="../Resource.axd?r=IDS.Web.Resources.Scripts.jquery.min.js&amp;h=C58D04761068EFFBCAC768E9B8C104CB"></script>
@@ -127,10 +127,10 @@ function __doPostBack(eventTarget, eventArgument) {
 &lt;!--
 PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN','PO',{OwnID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU',HPos:'rightsidesalign',VPos:'popupbelow',HPosOf:0,VPosOf:0,onpopup:'javascript: vResult = DTB_OnPopup(\'M_content_PCDZ_M2SN6LC_ctl00_FromDate\',\'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU\'); if (vResult) {vResult = CSC_TestInitializing(\'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN\',\'Still loading. One moment please.\');};',IEFix:true},0,0);
 PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN','PO',{OwnID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP',HPos:'rightsidesalign',VPos:'popupbelow',HPosOf:15,VPosOf:0,IEFix:true},0,0);
-PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate','AO',{DateOrder:'MM DD YYYY',MonthNames:0,MNU:true,DFmt:0,DPat:'MM/dd/yyyy',RngSId:'',RngEId:'',RngMD:0,Today:new Date(2013,3,14),Min:new Date(1999,7,6),Max:new Date(2013,3,14),DSep:'/',ErrFC:'',OrigFC:'',ErrBC:'',OrigBC:'',ErrAOC:true,ErrPU:1,CmdKeys:'{#40|1}{,|1}{-|1}{&lt;|1}{#38|2}{.|2}{+|2}{&gt;|2}{#34|3}{#33|4}{T|10}{S|14}{C|11}',CntBrk:50,FOErr:true,InvalidMsg:'The date is invalid.',OutOfRangeMsg:'The date must be between 08/06/1999 and 04/14/2013.',Dirty:false,LastText:'',LastDate:0,CalID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',SDId:''},0,0);
-PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN','AO',{Init:CSC_Initialize,CID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',IVis:false,MV:1,MCC:1,IsSelD:CSC_IsSelDate,SetDV:CSC_SetDV,GetDV:CSC_GetDV,GetDL:CSC_GetDateLabel,HasClSl:CSC_HasCellSel,IsClSl:CSC_IsCellSel,SetClSl:CSC_SetCellSel,ClearClSl:CSC_ClearCellSel,FirstClSl:CSC_FirstClSl,WDCSS:'CSCDay',WEBG:'',WEBGOM:true,WEBGSelC:false,WEBGTC:true,WEBGSpC:true,SelCSS:'CSCSelectedDay',TCSS:'CSCToday',SelTCSS:'CSCSelectedToday',WRCSS:'CSCWeekRowsTable',OMCSS:'CSCOtherMonthDays',SpCSS:'CSCSpecialDay',ORCSS:'CSCOutsideRangeDay',MOBdrC:'',MOFC:'',DCBrdC:'Gray',OMDCBrdC:'Gray',FBrdC:'',DCBrdSd:1,DCFmt:'',WRAH:30,SpDtTT:'Special',TodayTT:'Today',FDOW:0,WkNm:false,WkNmRl:0,Month:3,Year:2013,KeyB:1,TodayY:2013,TodayM:3,TodayD:14,MinY:1999,MinM:7,MinD:6,MaxY:2013,MaxM:3,MaxD:14,OMDays:true,OMWks:true,LZDays:true,ORDays:false,LRMd:2,UDMd:1,CmdKeys:'{#34|1}{#33|2}{#35|3}{#36|4}{T|10}{#46|11}{#32|12}{#13|13}{S|14}{#27|20}{?|21}{/|21}{M|22}',JBy:12,ApMd:false,ShowYear:'rightofmonth',AMN:0,OnSelChg:'javascript: DTB_TransferCalendarToTextBox(null, \'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN\');',AChgN:true,SDId:'',IsPopup:true,SelChgC:'noapplycmd',FC:true,Inited:false,OSC:CSC_UpdateOther,MYPId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN'},0,0);
-PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN','AO',{Init:MYP_Initialize,Format:1,OORCSS:'MYPOutOfRangeCell',MCSS:'MYPMonthCell',SelMCSS:'MYPSelectedMonthCell',YCSS:'MYPYearCell',SelYCSS:'MYPSelectedYearCell',InitYO:5,MSelCId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN_MC_3',YSelCId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN_YC_5',MYBy:10,OnSelChg:'javascript: CSC_TransferMonthYearToCalendar(\'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN\');',AChgN:false,Today:new Date(2013,3,14),MinM:8,MinY:1999,MaxM:4,MaxY:2013,IsPopup:true},0,0);
-PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_ToDate','AO',{DateOrder:'MM DD YYYY',MonthNames:0,MNU:true,DFmt:0,DPat:'MM/dd/yyyy',RngSId:'',RngEId:'',RngMD:0,Today:new Date(2013,3,14),Min:new Date(1999,7,6),Max:new Date(2013,3,14),DSep:'/',ErrFC:'',OrigFC:'',ErrBC:'',OrigBC:'',ErrAOC:true,ErrPU:1,CmdKeys:'{#40|1}{,|1}{-|1}{&lt;|1}{#38|2}{.|2}{+|2}{&gt;|2}{#34|3}{#33|4}{T|10}{S|14}{C|11}',CntBrk:50,FOErr:true,InvalidMsg:'The date is invalid.',OutOfRangeMsg:'The date must be between 08/06/1999 and 04/14/2013.',Dirty:false,LastText:'',LastDate:0,CalID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',SDId:''},0,0);
+PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate','AO',{DateOrder:'MM DD YYYY',MonthNames:0,MNU:true,DFmt:0,DPat:'MM/dd/yyyy',RngSId:'',RngEId:'',RngMD:0,Today:new Date(2013,3,15),Min:new Date(1999,7,7),Max:new Date(2013,3,15),DSep:'/',ErrFC:'',OrigFC:'',ErrBC:'',OrigBC:'',ErrAOC:true,ErrPU:1,CmdKeys:'{#40|1}{,|1}{-|1}{&lt;|1}{#38|2}{.|2}{+|2}{&gt;|2}{#34|3}{#33|4}{T|10}{S|14}{C|11}',CntBrk:50,FOErr:true,InvalidMsg:'The date is invalid.',OutOfRangeMsg:'The date must be between 08/07/1999 and 04/15/2013.',Dirty:false,LastText:'',LastDate:0,CalID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',SDId:''},0,0);
+PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN','AO',{Init:CSC_Initialize,CID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',IVis:false,MV:1,MCC:1,IsSelD:CSC_IsSelDate,SetDV:CSC_SetDV,GetDV:CSC_GetDV,GetDL:CSC_GetDateLabel,HasClSl:CSC_HasCellSel,IsClSl:CSC_IsCellSel,SetClSl:CSC_SetCellSel,ClearClSl:CSC_ClearCellSel,FirstClSl:CSC_FirstClSl,WDCSS:'CSCDay',WEBG:'',WEBGOM:true,WEBGSelC:false,WEBGTC:true,WEBGSpC:true,SelCSS:'CSCSelectedDay',TCSS:'CSCToday',SelTCSS:'CSCSelectedToday',WRCSS:'CSCWeekRowsTable',OMCSS:'CSCOtherMonthDays',SpCSS:'CSCSpecialDay',ORCSS:'CSCOutsideRangeDay',MOBdrC:'',MOFC:'',DCBrdC:'Gray',OMDCBrdC:'Gray',FBrdC:'',DCBrdSd:1,DCFmt:'',WRAH:30,SpDtTT:'Special',TodayTT:'Today',FDOW:0,WkNm:false,WkNmRl:0,Month:3,Year:2013,KeyB:1,TodayY:2013,TodayM:3,TodayD:15,MinY:1999,MinM:7,MinD:7,MaxY:2013,MaxM:3,MaxD:15,OMDays:true,OMWks:true,LZDays:true,ORDays:false,LRMd:2,UDMd:1,CmdKeys:'{#34|1}{#33|2}{#35|3}{#36|4}{T|10}{#46|11}{#32|12}{#13|13}{S|14}{#27|20}{?|21}{/|21}{M|22}',JBy:12,ApMd:false,ShowYear:'rightofmonth',AMN:0,OnSelChg:'javascript: DTB_TransferCalendarToTextBox(null, \'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN\');',AChgN:true,SDId:'',IsPopup:true,SelChgC:'noapplycmd',FC:true,Inited:false,OSC:CSC_UpdateOther,MYPId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN'},0,0);
+PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN','AO',{Init:MYP_Initialize,Format:1,OORCSS:'MYPOutOfRangeCell',MCSS:'MYPMonthCell',SelMCSS:'MYPSelectedMonthCell',YCSS:'MYPYearCell',SelYCSS:'MYPSelectedYearCell',InitYO:5,MSelCId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN_MC_3',YSelCId:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN_YC_5',MYBy:10,OnSelChg:'javascript: CSC_TransferMonthYearToCalendar(\'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN_MYP_PN\');',AChgN:false,Today:new Date(2013,3,15),MinM:8,MinY:1999,MaxM:4,MaxY:2013,IsPopup:true},0,0);
+PDP_StartInit('M_content_PCDZ_M2SN6LC_ctl00_ToDate','AO',{DateOrder:'MM DD YYYY',MonthNames:0,MNU:true,DFmt:0,DPat:'MM/dd/yyyy',RngSId:'',RngEId:'',RngMD:0,Today:new Date(2013,3,15),Min:new Date(1999,7,7),Max:new Date(2013,3,15),DSep:'/',ErrFC:'',OrigFC:'',ErrBC:'',OrigBC:'',ErrAOC:true,ErrPU:1,CmdKeys:'{#40|1}{,|1}{-|1}{&lt;|1}{#38|2}{.|2}{+|2}{&gt;|2}{#34|3}{#33|4}{T|10}{S|14}{C|11}',CntBrk:50,FOErr:true,InvalidMsg:'The date is invalid.',OutOfRangeMsg:'The date must be between 08/07/1999 and 04/15/2013.',Dirty:false,LastText:'',LastDate:0,CalID:'M_content_PCDZ_M2SN6LC_ctl00_FromDate_PU_PN',SDId:''},0,0);
 var PDP_Months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 var PDP_AbbrevMonths = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
 var PDP_DaysOfWeek = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
@@ -140,7 +140,7 @@ var PDP_AbbrevDaysOfWeek = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', '
 
 <div class="aspNetHidden">
 
-	<input type="hidden" value="HlTQPMy3U7GVyuYZHzilAm1y8YHDiQHBNFawgngsoOe+n5Rt66qjbNrVT9teKKcVbxesV6/2TTYDrmFxllRYwsMhBFrqIFo9iKR8g1VxSV17v8Sln/LlMjETmc+i0OdToFL9yhp2wctO2pMQzrxRHSMPu7D+1mNwMMmx3dkkmxXm3sTCUmW3bSJgUGcCWf2BZlpwRJfdheyCdS2CNey0bfrW+0tFObWcLDkKKZ+Ya5BDB3MKkN+Y0kueEojfavlCCLvZSQR4EgENQgrkrqex0ygzSiWLgGwXOaBODgf6AvfWTrJf" id="__EVENTVALIDATION" name="__EVENTVALIDATION" />
+	<input type="hidden" value="vQRW3r3IatCDkMDkw7tSh1nbs9cj9NhR1ryRO3ngyao7SjbDQUtvI7HEF4a0Okb2hlO7Q4g5EGVCYNhJuI5df5EGwYbQpjepKRvLxMlcYuUrK+hxM580tdWT9t9C0ZQb7zBTtQaOS4Cb75too2GPchhnd/IXaRAekLPz4yWCJ1qm3ptnEs2DLD9Fw+el5bjZI30Q/gtiC2ti9wY1uQS35z2I7dji8DUKztXAD9vveLXM96MxKDCFbcFGi5lwFnrvDrSL2UerwJ5vN2mkLQpwz8AveyAhGpFu872Gs6Nfqz8Xoh0A" id="__EVENTVALIDATION" name="__EVENTVALIDATION" />
 </div>
     <!--[if IE]>
       <script src="/OnlineBanking/hlm/PurdueTemplate/conditionalResources/iefix.js" type="text/javascript"></script>
@@ -205,7 +205,7 @@ var PDP_AbbrevDaysOfWeek = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', '
                     </script>
               </header>
                     <div class="breadcrumb">
-                      <span id="M_SiteMapPath1"><a href="#M_SiteMapPath1_SkipLink"><img width="0" height="0" style="border-width:0px;" src="/OnlineBanking/WebResource.axd?d=MS6asreFakl7VF7ZhrHJfCl3mtP1X6YIMKFzfdhMkfE_t9OQNHfpRXbQFWOugNmjTLfvjEreRFXNa1Y9AJK8WOAbETw1&amp;t=634840909855338750" alt="Skip Navigation Links" /></a><span><a href="/OnlineBanking/ViewAccounts.aspx">View Accounts</a></span><span> È </span><span>Account History</span><a id="M_SiteMapPath1_SkipLink"></a></span>
+                      <span id="M_SiteMapPath1"><a href="#M_SiteMapPath1_SkipLink"><img width="0" height="0" style="border-width:0px;" src="/OnlineBanking/WebResource.axd?d=MS6asreFakl7VF7ZhrHJfCl3mtP1X6YIMKFzfdhMkfE_t9OQNHfpRXbQFWOugNmjTLfvjEreRFXNa1Y9AJK8WOAbETw1&amp;t=634840909430305000" alt="Skip Navigation Links" /></a><span><a href="/OnlineBanking/ViewAccounts.aspx">View Accounts</a></span><span> È </span><span>Account History</span><a id="M_SiteMapPath1_SkipLink"></a></span>
                     </div>
                   <div id="wrap">
                     <section id="site">
@@ -234,7 +234,7 @@ Sys.WebForms.PageRequestManager._initialize('M$content$ScriptManager', 'aspnetFo
     </script>
 
 <div style="">
-<span id="M_content_PCDZ_MF2T0NU_ctl00_lblHtml"><a href="/OnlineBanking/MCSClickService.aspx?ID=173&amp;ContentLocationID=13"><img border="0" src="/OnlineBanking/SqlImageViewerService.aspx?ID=267" /></a></span>
+<span id="M_content_PCDZ_MF2T0NU_ctl00_lblHtml"><a href="/OnlineBanking/MCSClickService.aspx?ID=178&amp;ContentLocationID=13"><img border="0" src="/OnlineBanking/SqlImageViewerService.aspx?ID=265" /></a></span>
 
 </div>
     <div style="">
@@ -273,7 +273,7 @@ function ShowOrHideRangeSearch(selectedItem)
                     <label id="M_content_PCDZ_M2SN6LC_ctl00_accountHistoryLabel" for="M_content_PCDZ_M2SN6LC_ctl00_selectedAccount">Account History:</label><select id="M_content_PCDZ_M2SN6LC_ctl00_selectedAccount" name="M$content$PCDZ$M2SN6LC$ctl00$selectedAccount">
 	<option value="64299_000686899-S00">686899-00 - PRIMARY SHARE SAVING (Available $15.00)</option>
 	<option value="64299_000686899-S90">686899-90 - STUDENT CHECKING (Available $0.00)</option>
-	<option value="64299_000686899-L66" selected="selected">686899-66 - REWARDS VISA 17.5% (Available $122.83)</option>
+	<option value="64299_000686899-L66" selected="selected">686899-66 - REWARDS VISA 17.5% (Available $112.85)</option>
 
 </select><span id="M_content_PCDZ_M2SN6LC_ctl00_account"></span>
                 </p>
@@ -353,6 +353,10 @@ function ShowOrHideRangeSearch(selectedItem)
 	<tbody><tr class="table_header">
 		<td align="center"><a href="javascript:__doPostBack('M$content$PCDZ$M2SN6LC$ctl00$transactionsGrid$ctl01$ctl01','')">Date</a><img src="/OnlineBanking/images/ArrowUpBlack.gif" /></td><td></td><td align="right"><a href="javascript:__doPostBack('M$content$PCDZ$M2SN6LC$ctl00$transactionsGrid$ctl01$ctl04','')">Amount</a></td><td><a href="javascript:__doPostBack('M$content$PCDZ$M2SN6LC$ctl00$transactionsGrid$ctl01$ctl05','')">Int</a></td><td><a href="javascript:__doPostBack('M$content$PCDZ$M2SN6LC$ctl00$transactionsGrid$ctl01$ctl06','')">Principal</a></td><td align="right"><a href="javascript:__doPostBack('M$content$PCDZ$M2SN6LC$ctl00$transactionsGrid$ctl01$ctl08','')">Balance</a></td>
 	</tr><tr>
+		<td align="center">04/15/2013</td><td>CHIPOTLE 0690 WEST LAFAYETT IN    </td><td align="right">($7.12)</td><td>N/A</td><td>($7.12)</td><td align="right">$634.29</td>
+	</tr><tr class="row_alternating">
+		<td align="center">04/14/2013</td><td>MCDONALD'S M6318 (Pending)    </td><td align="right">($2.86)</td><td>N/A</td><td>($2.86)</td><td align="right"></td>
+	</tr><tr>
 		<td align="center">04/13/2013</td><td>COCA COLA LAFAYETTE IN 888-227-2653 IN    </td><td align="right">($1.50)</td><td>N/A</td><td>($1.50)</td><td align="right">$627.17</td>
 	</tr><tr class="row_alternating">
 		<td align="center">04/13/2013</td><td>GREEN LEAF VIETNAMESE WEST LAFAYETT IN    </td><td align="right">($21.00)</td><td>N/A</td><td>($21.00)</td><td align="right">$625.67</td>
@@ -429,7 +433,7 @@ function ShowOrHideRangeSearch(selectedItem)
     </div>
 </div>
 <div style="">
-<span id="M_content_PCDZ_MJ5DYII_ctl00_lblHtml"><a href="/OnlineBanking/MCSClickService.aspx?ID=173&amp;ContentLocationID=14"><img border="0" src="/OnlineBanking/SqlImageViewerService.aspx?ID=267" /></a></span>
+<span id="M_content_PCDZ_MJ5DYII_ctl00_lblHtml"><a target="_blank" href="/OnlineBanking/MCSClickService.aspx?ID=165&amp;ContentLocationID=14"><img border="0" src="/OnlineBanking/SqlImageViewerService.aspx?ID=258" /></a></span>
 
 </div>
 
@@ -518,7 +522,7 @@ var IDS_DisableWhenClicked =  new Array('M_content_PCDZ_M2SN6LC_ctl00_search', '
 //]]&gt;
 </script>
 
-<script language="javascript">timeoutwarning_init("Your session is about to expire at %NextTimeOut_TimeOnly%. For security reasons, you are automatically logged out after 20 minutes of inactivity. If you would like to continue your session, please click on OK to continue with your session. If you would like to log out now, click on cancel.", "/OnlineBanking/keepalive.aspx?token=952987c1-f81f-4bef-81c5-9eef4ee66fe7", "/OnlineBanking/logoff.aspx", 1080000, 1200000, "__Page_mask", true);</script>
+<script language="javascript">timeoutwarning_init("Your session is about to expire at %NextTimeOut_TimeOnly%. For security reasons, you are automatically logged out after 20 minutes of inactivity. If you would like to continue your session, please click on OK to continue with your session. If you would like to log out now, click on cancel.", "/OnlineBanking/keepalive.aspx?token=bfc8af72-a3e9-4644-ae27-d2d910f7b009", "/OnlineBanking/logoff.aspx", 1080000, 1200000, "__Page_mask", true);</script>
 <script type="text/javascript">
 //&lt;![CDATA[
 var adminWindowHeight='700px';var adminWindowWidth='950px';//]]&gt;

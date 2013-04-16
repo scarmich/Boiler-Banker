@@ -1,5 +1,7 @@
 package com.example.boilerbanker;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.EditText;
 public class DisplayWelcomeActivity extends Activity {
 
 	public void signOutReturnToWelcome(View view) {
+		
 		finish();
 	}
 

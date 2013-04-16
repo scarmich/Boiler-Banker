@@ -22,6 +22,7 @@ public class Client extends AbstractClient {
 	}
 	
 	protected void handleMessageFromServer(Object msg) {
+		System.out.println("message received");
 		if (msg == null){
 			System.out.println("Client Error: msg from Server empty");
 			return;
@@ -33,7 +34,12 @@ public class Client extends AbstractClient {
 		userTransactions = user.getTransactions();
 		numTransactions = user.getNumTransactions();
 		
-		setNewLastFiveTransactions();
+		System.out.println(userName + " " + currentBalance);
+		for (int i = 0; i < 5; i++) {
+			System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
+		}
+		
+		//setNewLastFiveTransactions();
 	}
 	
 	//Latest transactions first. 
@@ -47,7 +53,7 @@ public class Client extends AbstractClient {
 			line = String.valueOf(currentBalance) + "\n";
 			out.write(line.getBytes());
 			for(int i=0; i<5 && i<numTransactions; i++){
-				line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount() + " " + userTransactions[i].getBalance() + "\n";
+				line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount() + "\n";
 				out.write(line.getBytes());
 			}
 			
@@ -61,8 +67,9 @@ public class Client extends AbstractClient {
 		}
 	}
 	
-
+/*
 	public Transaction[] getLastFiveTransactions(){
+	
 		String filename = userName + "transactions";
 		File f = new File(ApplicationContext.getMyApplicationContext().getFilesDir(), filename);
 		Scanner in = null;
@@ -84,9 +91,8 @@ public class Client extends AbstractClient {
 				trans[i] = new Transaction();
 			}
 		}
-		
 		return trans;
-	}
+	} */
 	
 	public void sendUserCredentials(String user, String password) {
 		String together = user + " " + password;

@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
 			startActivity(welcomeIntent);
 			Thread thread = new Thread() {
 				public void run() {
-					getClient().sendUserCredentials(user, pass);
+					makeClient().sendUserCredentials(user, pass);
 				}
 			};
 			thread.start();
@@ -82,14 +82,16 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	public static Client getClient() {
-		if(client == null) {
-			try {
-				client = new Client("sslab08.cs.purdue.edu", 5003);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	public static Client makeClient() {
+		try {
+			client = new Client("sslab08.cs.purdue.edu", 5003);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		return client;
+	}
+	
+	public static Client getClient() {
 		return client;
 	}
 

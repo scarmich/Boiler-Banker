@@ -38,3 +38,5 @@ proguard-project.txt
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+BoilerBankerDemo/.DS_Store~HEAD

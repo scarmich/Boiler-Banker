@@ -1,16 +1,15 @@
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.python.util.PythonInterpreter;
-
 
 public class PFCUDriver {
 	
@@ -57,21 +56,72 @@ public class PFCUDriver {
         // Gets the page's HTML
         String htmlText = driver.getPageSource();
         
+        // Closes Driver
+        driver.close();
+        
         // Save String to text file
-        /*
         FileWriter file = new FileWriter("transInfo.txt");
         PrintWriter output = new PrintWriter(file);
         output.println(htmlText);
         output.close();
-        file.close();
-        */
+        file.close();        
         
-        // Closes Driver
-        driver.close();
-        
-        
+        parse(username);
 	}
 
+	public static void parse (String username) {
+		String fileName = "transInfo.txt";
+		File file = new File(fileName);
+		String outFile = "UserTransactions/"+username+".txt";
+		try {
+		FileWriter fstream = new FileWriter(outFile);
+		BufferedWriter out  = new BufferedWriter(fstream);
+		Scanner read = new Scanner(file);
+		while(read.hasNextLine()){
+			String toAdd = read.nextLine();
+			if(toAdd.contains("<table cellspacing=\"0\" border=\"1\" style=\"width:100%;border-collapse:collapse;\"")){
+				toAdd = read.nextLine();
+				toAdd = read.nextLine();
+				toAdd = read.nextLine();
+				toAdd = read.nextLine();
+				while(!toAdd.contains("</tbody></table>")){
+					if(!toAdd.contains("</tr>")){
+						String parsedString = toAdd.substring(21);
+						parsedString = parsedString.replaceAll("</td><td>", " ");
+						parsedString = parsedString.replaceAll("</td><td align=\"right\">", " ");
+						parsedString = parsedString.replaceAll("</td>", " ");
+						parsedString = parsedString.replaceAll("N/A",  "");
+						parsedString = parsedString.replaceAll("\\(", "");
+						parsedString = parsedString.replaceAll("\\)", "");
+						parsedString = parsedString.replaceAll("    ", "");
+						//parsedString = parsedString.replaceAll("  [^ ]*", "");
+						parsedString = parsedString.replaceAll("  ", " ");
+						String []parsed = parsedString.split(" ");
+						String date = parsed[0];
+						String vendor = "";
+						for (int i = 1; i < (parsed.length-3); i++) {
+							vendor += parsed[i];
+							if (i != (parsed.length-4)) {
+								vendor += "_";
+							}
+						}
+						String cost = parsed[(parsed.length-2)];
+						String balance = parsed[(parsed.length-1)];
+						parsedString = date + " " + vendor + " " + cost + " " + balance + "\n";
+						out.write(parsedString);
+						//System.out.print(parsedString);
+					}
+					toAdd = read.nextLine();
+				}
+				break;
+			}
+			
+		}
+		out.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
 	
 	public static void main(String [] args) throws IOException {
 		new PFCUDriver("abravoset", "CS307project");

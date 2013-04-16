@@ -29,7 +29,7 @@ public final class R {
         public static final int Transaction3=0x7f080010;
         public static final int Transaction4=0x7f08000b;
         public static final int Transaction5=0x7f08000d;
-        public static final int action_settings=0x7f080020;
+        public static final int action_settings=0x7f080021;
         public static final int back_button=0x7f08000e;
         public static final int budget_button=0x7f080017;
         public static final int button1=0x7f080008;
@@ -41,12 +41,13 @@ public final class R {
         public static final int edit_button5=0x7f080015;
         public static final int goButton=0x7f080002;
         public static final int log_out=0x7f08000f;
-        public static final int login_button=0x7f08001f;
+        public static final int login_button=0x7f08001a;
         public static final int logout_button=0x7f080019;
         public static final int offlineCheckbox=0x7f080009;
-        public static final int offline_button=0x7f08001e;
-        public static final int passwordTextView=0x7f08001b;
-        public static final int password_message=0x7f08001d;
+        public static final int offline_button=0x7f08001c;
+        public static final int passwordTextView=0x7f08001f;
+        public static final int password_message=0x7f080020;
+        public static final int relativeLayout1=0x7f08001b;
         public static final int settings_button=0x7f080018;
         public static final int surfaceView1=0x7f080001;
         public static final int textView1=0x7f080003;
@@ -55,8 +56,8 @@ public final class R {
         public static final int textView4=0x7f080005;
         public static final int textView5=0x7f080007;
         public static final int transactions_button=0x7f080016;
-        public static final int usernameTextView=0x7f08001a;
-        public static final int username_message=0x7f08001c;
+        public static final int usernameTextView=0x7f08001d;
+        public static final int username_message=0x7f08001e;
     }
     public static final class layout {
         public static final int activity_display_budget=0x7f030000;

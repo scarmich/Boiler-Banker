@@ -6,26 +6,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/black"
     tools:context=".DisplaySettingsViewActivity" >
-
-    <CheckBox
-        android:id="@+id/offlineCheckbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="142dp"
-        android:text="@string/offline_setting"
-        />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/offlineCheckbox"
+        android:layout_below="@+id/relativeLayout1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/back"
-        android:onClick="backClicked" />
+        android:layout_marginTop="35dp"
+        android:background="#FFCC33"
+        android:onClick="backClicked"
+        android:text="@string/back" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="92dp"
+        android:background="@android:color/white" >
+
+        <CheckBox
+            android:id="@+id/offlineCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/offline_setting" />
+    </RelativeLayout>
 
 </RelativeLayout>

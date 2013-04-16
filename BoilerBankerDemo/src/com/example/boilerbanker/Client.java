@@ -47,7 +47,7 @@ public class Client extends AbstractClient {
 			line = String.valueOf(currentBalance) + "\n";
 			out.write(line.getBytes());
 			for(int i=0; i<5 && i<numTransactions; i++){
-				line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount() + "\n";
+				line = userTransactions[i].getId() + " " + userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount() + " " + userTransactions[i].getBalance() + "\n";
 				out.write(line.getBytes());
 			}
 			
@@ -72,17 +72,10 @@ public class Client extends AbstractClient {
 			System.out.println("Client Error: Couldn't open transaction file or Scanner for reading :" + e.toString());
 		}
 		Transaction[] trans = new Transaction[5];
-		String line;
-		String delims = "[ ]";
-		String[] tokens;
 		
 		currentBalance = Integer.parseInt(in.nextLine());
-		for(int i=0; i<5 && i<numTransactions; i++){
-			line = in.nextLine();
-			if(line != null){
-				tokens = line.split(delims);
-				trans[i] = new Transaction(Integer.parseInt(tokens[0]), tokens[1], tokens[2], Double.parseDouble(tokens[3]));
-			}
+		for(int i=0; i<5 && i<numTransactions && in.hasNextLine(); i++){
+			trans[i] = new Transaction(Integer.parseInt(in.next()), in.next(), in.next(), Double.parseDouble(in.next()), Double.parseDouble(in.next()));
 		}
 		
 		//In case the number of transactions is too small, use default constructor

@@ -34,7 +34,7 @@ public class PFCUDriver {
         
         //Handler for security questions
         if (!(driver.getCurrentUrl().equals("https://homebanking.purduefed.com/OnlineBanking/AccountSummary.aspx"))) {
-        	System.out.println("Issue occured");
+        	System.out.println("Issue Occured");
         	System.exit(0);
         }
         
@@ -109,8 +109,7 @@ public class PFCUDriver {
 						String balance = parsed[(parsed.length-1)];
 						parsedString = date + " " + vendor + " " + cost + " " + balance + "\n";
 						out.write(parsedString);
-						//System.out.print(parsedString);
-					}
+						}
 					toAdd = read.nextLine();
 				}
 				break;
@@ -118,7 +117,7 @@ public class PFCUDriver {
 			
 		}
 		out.close();
-		}catch(IOException e){
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}

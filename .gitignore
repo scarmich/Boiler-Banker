@@ -25,4 +25,8 @@ selenium-2.31.0/.DS_Store
 
 *.class
 
-*.class
+BoilerBankerDemo/bin/BoilerBanker.apk
+
+*.apk
+
+*.dex

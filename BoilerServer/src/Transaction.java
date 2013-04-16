@@ -1,4 +1,4 @@
-//package com.example.boilerbanker;
+package com.example.boilerbanker;
 
 import java.io.Serializable;
 
@@ -12,18 +12,21 @@ public class Transaction implements Serializable{
 	//If positive it was received.
 	private double amount;
 	private int id;
+	private double balance;
 	
-	public Transaction(int id, String date, String loc, double amt){
+	public Transaction(int id, String date, String loc, double amt, double balance){
 		this.id = id;
 		this.location = loc;
 		this.amount = amt;
 		this.date = date;
+		this.balance = balance;
 	}
 	
 	public Transaction() {
 		id = 0;
 		location = "";
 		amount = 0.0;
+		balance = 0.0;
 		date = "";
 	}
 	
@@ -33,6 +36,10 @@ public class Transaction implements Serializable{
 	
 	public double getAmount() {
 		return amount;
+	}
+	
+	public double getBalance() {
+		return balance;
 	}
 	
 	public String getDate() {
@@ -57,5 +64,9 @@ public class Transaction implements Serializable{
 	
 	public void setAmount(double amount){
 		this.amount = amount;
+	}
+	
+	public void setBalance(double bal){
+		this.balance = bal;
 	}
 }

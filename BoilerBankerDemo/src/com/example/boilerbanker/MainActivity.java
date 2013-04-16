@@ -73,24 +73,7 @@ public class MainActivity extends Activity {
 			startActivity(welcomeIntent);
 			Thread thread = new Thread() {
 				public void run() {
-<<<<<<< HEAD
-					client.sendUserCredentials(user, pass);
-//					try {
-//						Client client = new Client("moore06.cs.purdue.edu", 5002);
-//						client.sendUserCredentials(user, pass);
-//					} catch (IOException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-=======
-					try {
-						Client client = new Client("sslab08.cs.purdue.edu", 5003);
-						client.sendUserCredentials(user, pass);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
->>>>>>> Working on server
+					getClient().sendUserCredentials(user, pass);
 				}
 			};
 			thread.start();

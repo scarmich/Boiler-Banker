@@ -15,6 +15,8 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 	
+	private static Client client;
+	
 	public void openOfflineView(View view) {
 		// Checks to see if OfflineView is enabled
 				SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
@@ -71,19 +73,31 @@ public class MainActivity extends Activity {
 			startActivity(welcomeIntent);
 			Thread thread = new Thread() {
 				public void run() {
-					try {
-						Client client = new Client("moore06.cs.purdue.edu", 5002);
-						client.sendUserCredentials(user, pass);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					client.sendUserCredentials(user, pass);
+//					try {
+//						Client client = new Client("moore06.cs.purdue.edu", 5002);
+//						client.sendUserCredentials(user, pass);
+//					} catch (IOException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
 				}
 			};
 			thread.start();
 			
 			
 		}
+	}
+	
+	public static Client getClient() {
+		if(client == null) {
+			try {
+				client = new Client("sslab08.cs.purdue.edu", 5003);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return client;
 	}
 
 	@Override

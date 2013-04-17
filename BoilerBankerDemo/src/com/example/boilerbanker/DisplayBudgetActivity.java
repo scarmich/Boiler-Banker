@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SurfaceHolder;
@@ -45,24 +46,21 @@ public class DisplayBudgetActivity extends Activity implements
 		goButton = (Button) findViewById(R.id.budgetGoButton);
 		dateField.setHint("Enter date range here");
 
-		/* Old 5 hardcoded transactions
-		Transaction trans1 = new Transaction(001, "3/1/2013", "Walmart", 168.9);
-		Transaction trans2 = new Transaction(002, "3/5/2013", "Gas", 46.69);
-		Transaction trans3 = new Transaction(003, "3/19/2013", "Applebees",
-				24.99);
-		Transaction trans4 = new Transaction(004, "4/1/2013", "Cell Bill",
-				75.99);
-		Transaction trans5 = new Transaction(005, "4/9/2013", "Pizza Hut",
-				20.00);
-		transactions.add(trans1);
-		transactions.add(trans2);
-		transactions.add(trans3);
-		transactions.add(trans4);
-		transactions.add(trans5);
-		*/
-		Transaction [] trans = MainActivity.getClient().getUserData().getTransactions();
-		for(int i = 0; i < trans.length; i++) {
+		Transaction[] trans = MainActivity.getClient().getUserData()
+				.getTransactions();
+		for (int i = 0; i < trans.length; i++) {
 			transactions.add(trans[i]);
+		}
+		if (transactions != null) {
+			Log.i(TAG, "Transactions size: " + transactions.size());
+		} else {
+			Log.i(TAG, "Transactions was null");
+		}
+		for (int i = 0; i < transactions.size(); i++) {
+			if (transactions.get(i) == null) {
+				transactions.remove(i);
+				i--;
+			}
 		}
 		displayData(transactions);
 	}
@@ -113,13 +111,12 @@ public class DisplayBudgetActivity extends Activity implements
 					|| transactions.get(i).getLocation().contains("COCA_COLA")
 					|| transactions.get(i).getLocation().contains("GREEN_LEAF")
 					|| transactions.get(i).getLocation().contains("LINS_WOK")
-					|| transactions.get(i).getLocation().contains("MCDONALDS")
+					|| transactions.get(i).getLocation().contains("MCDONALD'S")
 					|| transactions.get(i).getLocation().contains("TACO_BELL")
 					|| transactions.get(i).getLocation()
 							.contains("MC_FIESTA_MEXICAN")
 					|| transactions.get(i).getLocation()
 							.contains("PANDA_EXPRESS")
-					|| transactions.get(i).getLocation().contains("MCDONALDS")
 					|| transactions.get(i).getLocation()
 							.contains("HOT_WOKS_COOL_SUSHI")) {
 				cats.get(fIndex).addTransaction(transactions.get(i));
@@ -132,7 +129,7 @@ public class DisplayBudgetActivity extends Activity implements
 			} else if (transactions.get(i).getLocation()
 					.contains("WABASH_LANDING_9")) {
 				cats.get(eIndex).addTransaction(transactions.get(i));
-			} else if (transactions.get(i).getLocation().contains("MACYS")) {
+			} else if (transactions.get(i).getLocation().contains("MACY*S")) {
 				cats.get(cIndex).addTransaction(transactions.get(i));
 			} else if (transactions.get(i).getLocation()
 					.contains("BOB_ROHRMAN")
@@ -142,6 +139,7 @@ public class DisplayBudgetActivity extends Activity implements
 				cats.get(oIndex).addTransaction(transactions.get(i));
 			}
 		}
+
 		WebView webView = (WebView) findViewById(R.id.webView1);
 		String url = "https://chart.googleapis.com/chart?cht=p3&chs=300x275&chd=t:";
 		double totalSpent = 0;
@@ -161,11 +159,13 @@ public class DisplayBudgetActivity extends Activity implements
 				}
 			}
 		}
-		
+
 		url += "&chdlp=bv&chdl="; // set legend below graph and vertical
 		for (int i = 0; i < cats.size(); i++) {
 			if (cats.get(i).getAmount() > 0) {
 				String name = cats.get(i).getName();
+				int percent = (int)(100* cats.get(i).getAmount() / totalSpent);
+				name += " " + percent + "%";
 				while (name.contains(" ")) {
 					name = name.replace(" ", "%20");
 				}
@@ -173,58 +173,22 @@ public class DisplayBudgetActivity extends Activity implements
 				if (i < cats.size() - 1)
 					url += "|";
 			} else { // if category amount is 0
-				if(i == cats.size() - 1) { // if this is last category
-					url = url.substring(0, url.length() - 1); //remove last |
+				if (i == cats.size() - 1) { // if this is last category
+					url = url.substring(0, url.length() - 1); // remove last
+																// |
 				}
 			}
 		}
-		url += "&chco=0000FF,FF0000"; // set color gradient
+		url += "&chco=00F0FF,FF0F00"; // set color gradient
 		System.out.println("URL: " + url);
 		webView.loadUrl(url);
+		for(int i = 0; i < cats.size(); i++) {
+			Log.i(TAG, "Category: " + cats.get(i).getName() + " Amount: " + cats.get(i).getAmount());
+			for(int j = 0; j < cats.get(i).getSize(); j++) {
+				Log.i(TAG, "Transaction: " + cats.get(i).getTrans().get(j).getLocation() + " Amount: " + cats.get(i).getTrans().get(j).getAmount());
+			}
+		}
 	}
-
-	/*
-	 * public void surfaceChanged(SurfaceHolder holder, int format, int width,
-	 * int height) { }
-	 * 
-	 * protected void tryDrawing(SurfaceHolder holder) { Log.i(TAG,
-	 * "Trying to draw...");
-	 * 
-	 * Canvas canvas = holder.lockCanvas(); if (canvas == null) { Log.e(TAG,
-	 * "Cannot draw onto canvas as it's null"); } else { drawMyStuff(canvas);
-	 * holder.unlockCanvasAndPost(canvas); } sv.setBackgroundColor(Color.RED); }
-	 * 
-	 * private void drawMyStuff(final Canvas canvas) { Log.i(TAG, "Drawing...");
-	 * // canvas.drawColor(Color.BLACK); // int[] colors = { Color.RED,
-	 * Color.BLUE, Color.GREEN, Color.MAGENTA, // Color.YELLOW };
-	 * 
-	 * Paint paint1 = new Paint(); // Paint paint2 = new Paint();
-	 * paint1.setStyle(Paint.Style.FILL); // paint2.setStyle(Paint.Style.FILL);
-	 * RectF rectF = new RectF(); int height = sv.getHeight(); int width =
-	 * sv.getWidth(); rectF.set(0, 0, width / 2, height / 2); double curAngle =
-	 * 0; int curLine = 0; for (int i = 0; i < percents.length; i++) {
-	 * paint1.setColor(colors[i]); // paint2.setColor(colors[i]);
-	 * canvas.drawArc(rectF, (int) curAngle, (int) Math.ceil((360 * percents[i]
-	 * / 100)), true, paint1); paint1.setTextSize(30); canvas.drawText(names[i]
-	 * + " : " + percents[i] + "%", width / 2 + 10, curLine * 40 + 30, paint1);
-	 * curAngle += 360 * percents[i] / 100; curLine++; } }
-	 * 
-	 * @SuppressLint("WrongCall") public void surfaceCreated(SurfaceHolder
-	 * holder) { /* Canvas canvas = null; try { canvas = holder.lockCanvas();
-	 * synchronized (holder) { onDraw(canvas); } } catch (Exception e) {
-	 * e.printStackTrace(); } finally { if (canvas != null) {
-	 * holder.unlockCanvasAndPost(canvas); } }
-	 * 
-	 * 
-	 * }
-	 * 
-	 * private void onDraw(Canvas canvas) { drawMyStuff(canvas); }
-	 * 
-	 * public void surfaceDestroyed(SurfaceHolder holder) { // TODO
-	 * Auto-generated method stub
-	 * 
-	 * }
-	 */
 
 	/**
 	 * Set up the {@link android.app.ActionBar}.

@@ -20,6 +20,14 @@ public class Category {
 		return name;
 	}
 	
+	public int getSize() {
+		return transactions.size();
+	}
+	
+	public ArrayList<Transaction> getTrans() {
+		return transactions;
+	}
+	
 	public double getAmount() {
 		double amount = 0;
 		for(int i = 0; i < transactions.size(); i++) {

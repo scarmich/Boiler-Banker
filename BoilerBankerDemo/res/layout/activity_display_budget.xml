@@ -48,15 +48,6 @@
         android:text="Back"
         android:onClick="backReturnWelcome" />
 
-    <Button
-        android:id="@+id/budgetSignOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/budgetBackButton"
-        android:layout_alignRight="@+id/budgetGoButton"
-        android:text="Sign Out"
-         />
-
     <WebView
         android:id="@+id/webView1"
         android:layout_width="match_parent"

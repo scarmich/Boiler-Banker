@@ -104,13 +104,10 @@ public abstract class AbstractClient implements Runnable {
 
 		// Create the sockets and the data streams
 		try {
-			
 			clientSocket = new Socket(host, port);
-		
 			output = new ObjectOutputStream(clientSocket.getOutputStream());
-		
 			input = new ObjectInputStream(clientSocket.getInputStream());
-		
+			
 		} catch (IOException ex)
 		// All three of the above must be closed when there is a failure
 		// to create any of them
@@ -241,16 +238,17 @@ public abstract class AbstractClient implements Runnable {
 
 		try {
 			while (!readyToStop) {
+				
 				// Get data from Server and send it to the handler
 				// The thread waits indefinitely at the following
 				// statement until something is received from the server
 				msg = input.readObject();
-
 				// Concrete subclasses do what they want with the
 				// msg by implementing the following method
 				handleMessageFromServer(msg);
 			}
 		} catch (Exception exception) {
+			System.out.println("Exception caught!");
 			if (!readyToStop) {
 				try {
 					closeAll();
@@ -262,7 +260,9 @@ public abstract class AbstractClient implements Runnable {
 		} finally {
 			clientReader = null;
 		}
+		System.out.println("Bottom of run");
 	}
+	
 
 	// METHODS DESIGNED TO BE OVERRIDDEN BY CONCRETE SUBCLASSES ---------
 

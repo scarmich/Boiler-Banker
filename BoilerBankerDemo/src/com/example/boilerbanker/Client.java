@@ -17,12 +17,12 @@ public class Client extends AbstractClient {
 		
 		userName = "";
 		currentBalance = 0;
-		userTransactions = new Transaction[50];
+		//userTransactions = new Transaction[50];
 		openConnection();
 	}
 	
 	protected void handleMessageFromServer(Object msg) {
-		System.out.println("message received");
+		//System.out.println("message received");
 		if (msg == null){
 			System.out.println("Client Error: msg from Server empty");
 			return;
@@ -34,7 +34,7 @@ public class Client extends AbstractClient {
 		userTransactions = user.getTransactions();
 		numTransactions = user.getNumTransactions();
 		
-		System.out.println(userName + " " + currentBalance);
+		//System.out.println(userName + " " + currentBalance);
 		for (int i = 0; i < 5; i++) {
 			System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
 		}

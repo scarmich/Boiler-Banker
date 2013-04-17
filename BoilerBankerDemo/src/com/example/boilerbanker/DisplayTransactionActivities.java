@@ -1,7 +1,10 @@
 package com.example.boilerbanker;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -73,6 +76,22 @@ public class DisplayTransactionActivities extends Activity {
 		amount4.setText(String.format("%1$,.2f", amounts[3]));
 		amount5.setText(String.format("%1$,.2f", amounts[4]));
 		
+		String[] d = {"d1", "d2", "d3", "d4", "d5"};
+		String[] l = {"l1", "l2", "l3", "l4", "l5"};
+		String[] a = {"a1", "a2", "a3", "a4", "a5"};
+		
+		for (int i = 0; i < 5; i++) {
+			savePrefs(d[i], dates[i]);
+			savePrefs(l[i], locations[i]);
+			savePrefs(a[i], String.format("%1$,.2f", amounts[i]));
+		}
+	}
+	
+	private void savePrefs(String key, String value) {
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		Editor edit = sp.edit();
+		edit.putString(key, value);
+		edit.commit();
 	}
 	
 	public void backReturnWelcome(View view) {

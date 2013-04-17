@@ -132,9 +132,11 @@ public class Client extends AbstractClient {
 		return currentBalance;
 	}
 	
+	/*
 	public String getUser(){
 		return userName;
 	}
+	*/
 	
 	public Transaction[] getTransactions() {
 		return userTransactions;

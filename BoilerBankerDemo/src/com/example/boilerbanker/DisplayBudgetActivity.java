@@ -125,7 +125,7 @@ public class DisplayBudgetActivity extends Activity implements
 				cats.get(fIndex).addTransaction(transactions.get(i));
 			} else if (transactions.get(i).getLocation().contains("WAL-MART")) {
 				cats.get(gIndex).addTransaction(transactions.get(i));
-			} else if (transactions.get(i).getLocation().contains("WALLGREENS")
+			} else if (transactions.get(i).getLocation().contains("WALGREENS")
 					|| transactions.get(i).getLocation()
 							.contains("CVS_PHARMACY")) {
 				cats.get(pIndex).addTransaction(transactions.get(i));

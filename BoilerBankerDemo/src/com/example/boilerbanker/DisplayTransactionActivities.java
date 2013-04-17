@@ -70,12 +70,24 @@ public class DisplayTransactionActivities extends Activity {
 		date3.setText(dates[2]);
 		date4.setText(dates[3]);
 		date5.setText(dates[4]);
+		
+		String[] costs = {"$", "$", "$", "$", "$"};
+		for (int i = 0; i < 5; i++) {
+			costs[i] = costs[i] + String.format("%1$,.2f", amounts[i]);
+		}
+		amount1.setText(costs[0]);
+		amount2.setText(costs[1]);
+		amount3.setText(costs[2]);
+		amount4.setText(costs[3]);
+		amount5.setText(costs[4]);
+		
+		/*
 		amount1.setText(String.format("%1$,.2f", amounts[0]));
 		amount2.setText(String.format("%1$,.2f", amounts[1]));
 		amount3.setText(String.format("%1$,.2f", amounts[2]));
 		amount4.setText(String.format("%1$,.2f", amounts[3]));
 		amount5.setText(String.format("%1$,.2f", amounts[4]));
-		
+		*/
 		String[] d = {"d1", "d2", "d3", "d4", "d5"};
 		String[] l = {"l1", "l2", "l3", "l4", "l5"};
 		String[] a = {"a1", "a2", "a3", "a4", "a5"};
@@ -83,7 +95,7 @@ public class DisplayTransactionActivities extends Activity {
 		for (int i = 0; i < 5; i++) {
 			savePrefs(d[i], dates[i]);
 			savePrefs(l[i], locations[i]);
-			savePrefs(a[i], String.format("%1$,.2f", amounts[i]));
+			savePrefs(a[i], costs[i]);
 		}
 	}
 	

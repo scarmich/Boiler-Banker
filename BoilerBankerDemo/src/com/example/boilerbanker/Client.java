@@ -132,6 +132,10 @@ public class Client extends AbstractClient {
 		return currentBalance;
 	}
 	
+	public User getUserData() {
+		return user;
+	}
+	
 	/*
 	public String getUser(){
 		return userName;
@@ -140,10 +144,6 @@ public class Client extends AbstractClient {
 	
 	public Transaction[] getTransactions() {
 		return userTransactions;
-	}
-	
-	public User getUserData() {
-		return user;
 	}
 	
 	//Provided for Testing purposes

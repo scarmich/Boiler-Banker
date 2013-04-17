@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/relativeLayout1"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="41dp"
         android:onClick="openWelcome"
         android:background="#FFCC33"
         android:text="@string/login" />
@@ -27,6 +27,7 @@
         android:layout_alignBaseline="@+id/login_button"
         android:layout_alignBottom="@+id/login_button"
         android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_marginTop="3dp"
         android:background="#FFCC33"
         android:onClick="openOfflineView"
         android:text="@string/offline_view" />
@@ -55,6 +56,7 @@
             android:layout_alignBaseline="@+id/usernameTextView"
             android:layout_alignBottom="@+id/usernameTextView"
             android:layout_alignParentRight="true"
+            android:layout_marginLeft="2dp"
             android:inputType="text"
             android:ems="10" />
 
@@ -65,6 +67,7 @@
     	    android:layout_alignParentLeft="true"
     	    android:layout_below="@+id/username_message"
     	    android:layout_marginTop="36dp"
+    	    android:layout_marginLeft="2dp"
     	    android:text="@string/password" />
     	
     	<EditText

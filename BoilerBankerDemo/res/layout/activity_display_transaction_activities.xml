@@ -6,131 +6,88 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/black"
     tools:context=".DisplayTransactionActivities" >
     
-    <TextView
-        android:id="@+id/Transaction1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Transaction4"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:text="@string/Transaction"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white" >
 
-    <TextView
-        android:id="@+id/Transaction2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Transaction5"
-        android:layout_below="@+id/Transaction5"
-        android:layout_marginTop="30dp"
-        android:text="@string/Transaction"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/current_balance_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/currentBalance"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/Transaction4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Transaction5"
-        android:layout_below="@+id/Transaction1"
-        android:layout_marginTop="30dp"
-        android:text="@string/Transaction"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    <TextView
-        android:id="@+id/Transaction5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/back_button"
-        android:layout_below="@+id/Transaction4"
-        android:layout_marginTop="30dp"
-        android:text="@string/Transaction"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    
+        <TextView
+            android:id="@+id/transaction5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/transaction4"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/transaction3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/transaction4"
+            android:layout_alignLeft="@+id/transaction2"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/transaction2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/transaction3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/transaction4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/transaction5"
+            android:layout_alignLeft="@+id/transaction3"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/transaction1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/transaction2"
+            android:layout_alignLeft="@+id/transaction2"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+    </RelativeLayout>
+
     <Button
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="39dp"
-        android:layout_marginLeft="32dp"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="#FFCC33"
         android:minWidth="100dip"
-        android:text="@string/back"
-        android:onClick="backReturnWelcome" />
-
-    <Button
-        android:id="@+id/log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/back_button"
-        android:layout_alignBottom="@+id/back_button"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="38dp"
-        android:minWidth="100dip"
-        android:text="@string/logout" />
-
-    <TextView
-        android:id="@+id/Transaction3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Transaction2"
-        android:layout_below="@+id/Transaction2"
-        android:layout_marginTop="30dp"
-        android:text="@string/Transaction"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/edit_button1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Transaction1"
-        android:layout_alignBottom="@+id/Transaction1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="34dp"
-        android:text="@string/Edit" />
-
-    <Button
-        android:id="@+id/edit_button2"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Transaction4"
-        android:layout_alignBottom="@+id/Transaction4"
-        android:layout_alignLeft="@+id/edit_button1"
-        android:text="@string/Edit" />
-
-    <Button
-        android:id="@+id/edit_button3"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Transaction5"
-        android:layout_alignBottom="@+id/Transaction5"
-        android:layout_alignLeft="@+id/edit_button2"
-        android:text="@string/Edit" />
-
-    <Button
-        android:id="@+id/edit_button4"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Transaction2"
-        android:layout_alignBottom="@+id/Transaction2"
-        android:layout_alignLeft="@+id/edit_button3"
-        android:text="@string/Edit" />
-
-    <Button
-        android:id="@+id/edit_button5"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Transaction3"
-        android:layout_alignBottom="@+id/Transaction3"
-        android:layout_alignLeft="@+id/edit_button4"
-        android:text="@string/Edit" />
+        android:onClick="backReturnWelcome"
+        android:text="@string/back" />
 
 </RelativeLayout>

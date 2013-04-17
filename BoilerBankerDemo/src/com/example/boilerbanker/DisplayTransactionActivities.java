@@ -6,6 +6,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class DisplayTransactionActivities extends Activity {
 
@@ -15,6 +16,43 @@ public class DisplayTransactionActivities extends Activity {
 		setContentView(R.layout.activity_display_transaction_activities);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		// sets up all textviews
+		TextView balance = (TextView) findViewById(R.id.current_balance_view);
+		TextView trans1 = (TextView) findViewById(R.id.transaction1);
+		TextView trans2 = (TextView) findViewById(R.id.transaction2);
+		TextView trans3 = (TextView) findViewById(R.id.transaction3);
+		TextView trans4 = (TextView) findViewById(R.id.transaction4);
+		TextView trans5 = (TextView) findViewById(R.id.transaction5);
+		
+		// accesses client
+		Client client = MainActivity.getClient();
+		
+		// gets balance and sets to string
+		Double balanceVal = client.getUserData().getBalance();
+		String balanceText = "Current Balance: " + balanceVal.toString();
+		
+		String[] dates = new String[5];
+		String[] locations = new String[5];
+		double[] amounts = new double[5];
+		String[] finals = new String[5];
+		
+		for (int i = 0; i < 5; i++) {
+			dates[i] = client.getUserData().getTransactions()[i].getDate();
+			locations[i] = client.getUserData().getTransactions()[i].getLocation().substring(0,15) + "...";
+			locations[i] = locations[i].replaceAll("_",  " ");
+			amounts[i] = client.getUserData().getTransactions()[i].getAmount();
+			finals[i] = dates[i] + " " + locations[i] + " \t\t$" + String.format("%1$,.2f", amounts[i]);
+		}
+		
+		// sets textviews
+		balance.setText(balanceText);
+		trans1.setText(finals[0]);
+		trans2.setText(finals[1]);
+		trans3.setText(finals[2]);
+		trans4.setText(finals[3]);
+		trans5.setText(finals[4]);
+		
 	}
 	
 	public void backReturnWelcome(View view) {

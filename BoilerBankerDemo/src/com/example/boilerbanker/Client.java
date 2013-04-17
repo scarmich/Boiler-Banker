@@ -11,6 +11,8 @@ public class Client extends AbstractClient {
 	private double currentBalance;
 	private String userName;
 	private int numTransactions;
+	
+	private User user;
 
 	public Client(String host, int port) throws IOException {
 		super(host, port);
@@ -28,7 +30,7 @@ public class Client extends AbstractClient {
 			return;
 		}
 		
-		User user = (User) msg;
+		user = (User) msg;
 		userName = user.getUsername();
 		currentBalance = user.getBalance();
 		userTransactions = user.getTransactions();
@@ -136,6 +138,10 @@ public class Client extends AbstractClient {
 	
 	public Transaction[] getTransactions() {
 		return userTransactions;
+	}
+	
+	public User getUserData() {
+		return user;
 	}
 	
 	//Provided for Testing purposes

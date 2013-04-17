@@ -75,6 +75,106 @@
             android:layout_marginBottom="25dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction2"
+            android:layout_alignBottom="@+id/transaction2"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction1"
+            android:layout_alignBottom="@+id/transaction1"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction3"
+            android:layout_alignBottom="@+id/transaction3"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction4"
+            android:layout_alignBottom="@+id/transaction4"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/date5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction5"
+            android:layout_alignBottom="@+id/transaction5"
+            android:layout_alignParentLeft="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/amount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction1"
+            android:layout_alignBottom="@+id/transaction1"
+            android:layout_alignParentRight="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/amount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction2"
+            android:layout_alignBottom="@+id/transaction2"
+            android:layout_alignParentRight="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/amount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction3"
+            android:layout_alignBottom="@+id/transaction3"
+            android:layout_alignParentRight="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/amount4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction4"
+            android:layout_alignBottom="@+id/transaction4"
+            android:layout_alignParentRight="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/amount5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/transaction5"
+            android:layout_alignBottom="@+id/transaction5"
+            android:layout_alignParentRight="true"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
         
     </RelativeLayout>
 

@@ -24,6 +24,16 @@ public class DisplayTransactionActivities extends Activity {
 		TextView trans3 = (TextView) findViewById(R.id.transaction3);
 		TextView trans4 = (TextView) findViewById(R.id.transaction4);
 		TextView trans5 = (TextView) findViewById(R.id.transaction5);
+		TextView date1 = (TextView) findViewById(R.id.date1);
+		TextView date2 = (TextView) findViewById(R.id.date2);
+		TextView date3 = (TextView) findViewById(R.id.date3);
+		TextView date4 = (TextView) findViewById(R.id.date4);
+		TextView date5 = (TextView) findViewById(R.id.date5);
+		TextView amount1 = (TextView) findViewById(R.id.amount1);
+		TextView amount2 = (TextView) findViewById(R.id.amount2);
+		TextView amount3 = (TextView) findViewById(R.id.amount3);
+		TextView amount4 = (TextView) findViewById(R.id.amount4);
+		TextView amount5 = (TextView) findViewById(R.id.amount5);
 		
 		// accesses client
 		Client client = MainActivity.getClient();
@@ -47,11 +57,21 @@ public class DisplayTransactionActivities extends Activity {
 		
 		// sets textviews
 		balance.setText(balanceText);
-		trans1.setText(finals[0]);
-		trans2.setText(finals[1]);
-		trans3.setText(finals[2]);
-		trans4.setText(finals[3]);
-		trans5.setText(finals[4]);
+		trans1.setText(locations[0]);
+		trans2.setText(locations[1]);
+		trans3.setText(locations[2]);
+		trans4.setText(locations[3]);
+		trans5.setText(locations[4]);
+		date1.setText(dates[0]);
+		date2.setText(dates[1]);
+		date3.setText(dates[2]);
+		date4.setText(dates[3]);
+		date5.setText(dates[4]);
+		amount1.setText(String.format("%1$,.2f", amounts[0]));
+		amount2.setText(String.format("%1$,.2f", amounts[1]));
+		amount3.setText(String.format("%1$,.2f", amounts[2]));
+		amount4.setText(String.format("%1$,.2f", amounts[3]));
+		amount5.setText(String.format("%1$,.2f", amounts[4]));
 		
 	}
 	

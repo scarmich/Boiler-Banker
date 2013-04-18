@@ -82,4 +82,13 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:contentDescription="@drawable/logo2x"
+        android:src="@drawable/logo2x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/relativeLayout1"
+        android:layout_alignRight="@+id/relativeLayout1" />
+
 </RelativeLayout>

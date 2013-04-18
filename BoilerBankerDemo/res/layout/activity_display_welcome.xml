@@ -45,4 +45,17 @@
         android:background="#FFCC33"
         android:onClick="signOutReturnToWelcome" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/transactions_button"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="25dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:contentDescription="@drawable/logo2x"
+        android:src="@drawable/logo2x" />
+
 </RelativeLayout>

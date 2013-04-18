@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 public class MainActivity extends Activity {
 	
 	private static Client client;
+	private static boolean waiting = true;
 	
 	public void openOfflineView(View view) {
 		// Checks to see if OfflineView is enabled
@@ -69,17 +71,42 @@ public class MainActivity extends Activity {
 			alertDialog.setMessage("Please enter a password");
 			alertDialog.show();
 		} else {
-			Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-			startActivity(welcomeIntent);
+			final ProgressDialog progressDialog = new ProgressDialog(this);
+			progressDialog.setMessage("Logging in to PEFCU");
+			progressDialog.show();
+
 			Thread thread = new Thread() {
 				public void run() {
 					getClient().sendUserCredentials(user, pass);
+					while (waiting) {
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							progressDialog.dismiss();
+							startWelcome();
+						}
+					});
 				}
 			};
+			waiting = true;
 			thread.start();
-			
-			
 		}
+	}
+	
+	public static void changeWaiting() {
+		waiting = false;
+	}
+	
+	public void startWelcome() {
+		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
+		startActivity(welcomeIntent);
 	}
 	
 	public static Client makeClient() {
@@ -90,7 +117,7 @@ public class MainActivity extends Activity {
 	public static Client getClient() {
 		if (client == null) {
 			try {
-				client = new Client("sslab07.cs.purdue.edu", 5003);
+				client = new Client("data.cs.purdue.edu", 5003);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

@@ -26,6 +26,9 @@ public class DisplayOfflineViewActivity extends Activity {
 	}
 	
 	private void loadPrefs() {
+		// load last balance textview
+		TextView lastBal = (TextView) findViewById(R.id.off_current_balance_view);
+		
 		// load date textviews
 		TextView date1 = (TextView) findViewById(R.id.off_date1);
 		TextView date2 = (TextView) findViewById(R.id.off_date2);
@@ -54,10 +57,14 @@ public class DisplayOfflineViewActivity extends Activity {
 		String[] l = {"l1", "l2", "l3", "l4", "l5"};
 		String[] a = {"a1", "a2", "a3", "a4", "a5"};
 		
-		// Strings to store dates, locations, and amounts
+		// Strings to store last balance, dates, locations, and amounts
+		String bal;
 		String[] dates = new String[5];
 		String[] locations = new String[5];
 		String[] amounts = new String[5];
+		
+		// Grab last balance string
+		bal = sp.getString("lastBalance", "$0.00");
 		
 		// Grabs strings from savedpreferences
 		for (int i = 0; i < 5; i++) {
@@ -65,6 +72,10 @@ public class DisplayOfflineViewActivity extends Activity {
 			locations[i] = sp.getString(l[i], "Location");
 			amounts[i] = sp.getString(a[i], "$0.00");
 		}
+		
+		// Set last balance
+		String balance = "Last " + bal;
+		lastBal.setText(balance);
 		
 		//Sets the dates
 		date1.setText(dates[0]);

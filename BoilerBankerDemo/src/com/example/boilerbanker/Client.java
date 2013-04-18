@@ -40,7 +40,7 @@ public class Client extends AbstractClient {
 		for (int i = 0; i < 5; i++) {
 			System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
 		}
-		
+		MainActivity.changeWaiting();
 		//setNewLastFiveTransactions();
 	}
 	

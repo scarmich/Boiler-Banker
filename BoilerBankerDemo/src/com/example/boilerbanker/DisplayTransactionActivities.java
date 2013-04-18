@@ -97,6 +97,7 @@ public class DisplayTransactionActivities extends Activity {
 			savePrefs(l[i], locations[i]);
 			savePrefs(a[i], costs[i]);
 		}
+		savePrefs("lastBalance", balanceText);
 	}
 	
 	private void savePrefs(String key, String value) {

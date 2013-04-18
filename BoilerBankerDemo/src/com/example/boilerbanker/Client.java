@@ -128,12 +128,12 @@ public class Client extends AbstractClient {
 		userTransactions = trans;
 	}
 	
-	public double getCurrentBalance(){
-		return currentBalance;
-	}
-	
 	public User getUserData() {
 		return user;
+	}
+	
+	public double getCurrentBalance(){
+		return currentBalance;
 	}
 	
 	/*

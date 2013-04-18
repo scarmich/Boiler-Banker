@@ -5,6 +5,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@android:color/black"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".DisplayBudgetActivity" >
 
@@ -13,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:background="@android:color/white"
         android:layout_alignParentTop="true"
         android:ems="10" >
 
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/dateField"
         android:layout_toRightOf="@+id/dateField"
+        android:background="#FFCC33"
         android:text="Go"
         android:onClick="refreshData" />
 
@@ -45,6 +48,7 @@
         android:layout_alignLeft="@+id/dateField"
         android:layout_below="@+id/dateField"
         android:layout_marginTop="19dp"
+        android:background="#FFCC33"
         android:text="Back"
         android:onClick="backReturnWelcome" />
 

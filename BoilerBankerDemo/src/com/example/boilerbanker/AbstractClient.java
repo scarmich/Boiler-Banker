@@ -249,6 +249,7 @@ public abstract class AbstractClient implements Runnable {
 			}
 		} catch (Exception exception) {
 			System.out.println("Exception caught!");
+			exception.printStackTrace();
 			if (!readyToStop) {
 				try {
 					closeAll();

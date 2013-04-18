@@ -30,11 +30,29 @@
         android:layout_marginTop="94dp" />
 
     <Button
-        android:id="@+id/goButton"
+        android:id="@+id/budgetGoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/dateField"
         android:layout_toRightOf="@+id/dateField"
-        android:text="Button" />
+        android:text="Go"
+        android:onClick="refreshData" />
+
+    <Button
+        android:id="@+id/budgetBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dateField"
+        android:layout_below="@+id/dateField"
+        android:layout_marginTop="19dp"
+        android:text="Back"
+        android:onClick="backReturnWelcome" />
+
+    <WebView
+        android:id="@+id/webView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/surfaceView1"
+        android:layout_alignTop="@+id/surfaceView1" />
 
 </RelativeLayout>

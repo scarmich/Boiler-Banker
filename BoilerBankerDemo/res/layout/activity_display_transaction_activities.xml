@@ -13,7 +13,7 @@
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
         android:background="@android:color/white" >
 
         <TextView
@@ -83,6 +83,7 @@
             android:layout_alignBaseline="@+id/transaction2"
             android:layout_alignBottom="@+id/transaction2"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -93,6 +94,7 @@
             android:layout_alignBaseline="@+id/transaction1"
             android:layout_alignBottom="@+id/transaction1"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -103,6 +105,7 @@
             android:layout_alignBaseline="@+id/transaction3"
             android:layout_alignBottom="@+id/transaction3"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -113,6 +116,7 @@
             android:layout_alignBaseline="@+id/transaction4"
             android:layout_alignBottom="@+id/transaction4"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -123,6 +127,7 @@
             android:layout_alignBaseline="@+id/transaction5"
             android:layout_alignBottom="@+id/transaction5"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -133,6 +138,7 @@
             android:layout_alignBaseline="@+id/transaction1"
             android:layout_alignBottom="@+id/transaction1"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -143,6 +149,7 @@
             android:layout_alignBaseline="@+id/transaction2"
             android:layout_alignBottom="@+id/transaction2"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -153,6 +160,7 @@
             android:layout_alignBaseline="@+id/transaction3"
             android:layout_alignBottom="@+id/transaction3"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -163,6 +171,7 @@
             android:layout_alignBaseline="@+id/transaction4"
             android:layout_alignBottom="@+id/transaction4"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -173,6 +182,7 @@
             android:layout_alignBaseline="@+id/transaction5"
             android:layout_alignBottom="@+id/transaction5"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
             android:text="@string/Transaction"
             android:textAppearance="?android:attr/textAppearanceSmall" />
         

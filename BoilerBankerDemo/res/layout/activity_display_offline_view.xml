@@ -6,66 +6,197 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/black"
     tools:context=".DisplayOfflineViewActivity" >
-
-    <TextView
-        android:id="@+id/transaction2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    
+    <RelativeLayout
+        android:id="@+id/off_relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="94dp"
-        android:text="@string/current_balance"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:background="@android:color/white" >
 
-    <TextView
-        android:id="@+id/transaction3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/transaction2"
-        android:layout_alignBottom="@+id/transaction2"
-        android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/transaction2"
-        android:text="@string/balance"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/off_current_balance_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/lastBalance"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/transaction5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/transaction4"
-        android:layout_alignRight="@+id/transaction3"
-        android:text="@string/chipotle_cost"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/off_transaction5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/off_transaction4"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/transaction4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/transaction2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:text="@string/recent_transaction"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/off_transaction3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/off_transaction4"
+            android:layout_alignLeft="@+id/off_transaction2"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/transaction1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/transaction4"
-        android:layout_alignLeft="@+id/transaction2"
-        android:text="@string/recent_date"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/off_transaction2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/off_transaction3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_transaction4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/off_transaction5"
+            android:layout_alignLeft="@+id/off_transaction3"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_transaction1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/off_transaction2"
+            android:layout_alignLeft="@+id/off_transaction2"
+            android:layout_marginBottom="25dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_date2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction2"
+            android:layout_alignBottom="@+id/off_transaction2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction1"
+            android:layout_alignBottom="@+id/off_transaction1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_date3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction3"
+            android:layout_alignBottom="@+id/off_transaction3"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_date4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction4"
+            android:layout_alignBottom="@+id/off_transaction4"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_date5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction5"
+            android:layout_alignBottom="@+id/off_transaction5"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_amount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction1"
+            android:layout_alignBottom="@+id/off_transaction1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_amount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction2"
+            android:layout_alignBottom="@+id/off_transaction2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_amount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction3"
+            android:layout_alignBottom="@+id/off_transaction3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_amount4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction4"
+            android:layout_alignBottom="@+id/off_transaction4"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/off_amount5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/off_transaction5"
+            android:layout_alignBottom="@+id/off_transaction5"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:text="@string/Transaction"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+    </RelativeLayout>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/transaction4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="@string/back"
-        android:onClick="returnLogin" />
+        android:layout_alignLeft="@+id/off_relativeLayout1"
+        android:layout_below="@+id/off_relativeLayout1"
+        android:layout_marginTop="21dp"
+        android:background="#FFCC33"
+        android:onClick="returnLogin"
+        android:text="@string/back" />
 
 </RelativeLayout>

@@ -30,18 +30,31 @@ public class Client extends AbstractClient {
 			return;
 		}
 		
-		user = (User) msg;
-		userName = user.getUsername();
-		currentBalance = user.getBalance();
-		userTransactions = user.getTransactions();
-		numTransactions = user.getNumTransactions();
-		
-		//System.out.println(userName + " " + currentBalance);
-		for (int i = 0; i < 5; i++) {
-			System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
+		if (msg instanceof String) {
+			System.out.println("FAILURE");
+			MainActivity.changeCreds();
+			MainActivity.changeWaiting();
+		} else {
+			
+			user = (User) msg;
+			userName = user.getUsername();
+			currentBalance = user.getBalance();
+			userTransactions = user.getTransactions();
+			numTransactions = user.getNumTransactions();
+			
+			//System.out.println(userName + " " + currentBalance);
+			for (int i = 0; i < 5; i++) {
+				System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
+			}
+			MainActivity.changeWaiting();
+			try {
+				closeConnection();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//setNewLastFiveTransactions();
 		}
-		MainActivity.changeWaiting();
-		//setNewLastFiveTransactions();
 	}
 	
 	//Latest transactions first. 

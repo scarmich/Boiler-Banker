@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout="@android:color/white"
+        android:textColor="@android:color/white"
         android:layout_alignParentTop="true"
         android:ems="10" >
 

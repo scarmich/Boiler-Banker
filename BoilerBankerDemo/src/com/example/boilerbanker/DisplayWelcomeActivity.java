@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class DisplayWelcomeActivity extends Activity {
 
 	public void signOutReturnToWelcome(View view) {
-		
+		setResult(0);
 		finish();
 	}
 

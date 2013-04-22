@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/transactions_button"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="175dp"
         android:text="@string/transaction"
@@ -20,7 +20,7 @@
     
     <Button
         android:id="@+id/budget_button"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp"
         android:text="@string/budget"
@@ -29,7 +29,7 @@
     
     <Button
         android:id="@+id/settings_button"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="275dp"
         android:text="@string/settings"
@@ -38,7 +38,7 @@
     
     <Button
         android:id="@+id/logout_button"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="325dp"
         android:text="@string/logout"

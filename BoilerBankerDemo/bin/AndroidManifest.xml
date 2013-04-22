@@ -11,12 +11,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/key"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.boilerbanker.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,8 @@
         <activity
             android:name="com.example.boilerbanker.DisplayOfflineViewActivity"
             android:label="@string/title_activity_display_offline_view"
-            android:parentActivityName="com.example.boilerbanker.MainActivity" >
+            android:parentActivityName="com.example.boilerbanker.MainActivity" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.MainActivity" />
@@ -34,7 +36,8 @@
         <activity
             android:name="com.example.boilerbanker.DisplayWelcomeActivity"
             android:label="@string/title_activity_display_welcome"
-            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
@@ -42,7 +45,8 @@
         <activity
             android:name="com.example.boilerbanker.DisplaySettingsViewActivity"
             android:label="@string/title_activity_display_settings_view"
-            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity" />
@@ -50,7 +54,8 @@
         <activity
             android:name="com.example.boilerbanker.DisplayTransactionActivities"
             android:label="@string/title_activity_display_transaction_activities"
-            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity.java" >
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity.java" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity.java" />
@@ -58,7 +63,8 @@
         <activity
             android:name="com.example.boilerbanker.DisplayBudgetActivity"
             android:label="@string/title_activity_display_budget"
-            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" >
+            android:parentActivityName="com.example.boilerbanker.DisplayWelcomeActivity" 
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.boilerbanker.DisplayWelcomeActivity" />

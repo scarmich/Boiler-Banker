@@ -3,6 +3,7 @@ package com.example.boilerbanker;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -12,10 +13,39 @@ import android.view.View;
 import android.widget.EditText;
 
 public class DisplayWelcomeActivity extends Activity {
+	
 
 	public void signOutReturnToWelcome(View view) {
-		setResult(0);
+		
 		finish();
+	}
+	
+	public void refresh() {
+		final ProgressDialog progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("Logging in to PEFCU");
+		progressDialog.show();
+
+		Thread thread = new Thread() {
+			public void run() {
+				MainActivity.getClient().sendUserCredentials(MainActivity.user, MainActivity.pass);
+				while (MainActivity.waiting) {
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						progressDialog.dismiss();
+					}
+				});
+			}
+		};
+		MainActivity.waiting = true;
+		thread.start();
 	}
 
 	public void openSettingsActivity(View view) {

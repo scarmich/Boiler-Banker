@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/logout_button"
         android:layout_alignParentBottom="true"
-        android:background="#FFCC33"
+        android:background="@android:color/white"
         android:onClick="refresh"
         android:text="@string/refresh" />
 

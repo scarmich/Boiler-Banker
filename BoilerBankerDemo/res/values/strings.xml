@@ -29,5 +29,6 @@
     <string name="title_activity_display_budget">Budget</string>
     <string name="currentBalance">Current Balance:</string>
     <string name="lastBalance">Last Current Balance:</string>
+    <string name="refresh">Refresh</string>
 
 </resources>

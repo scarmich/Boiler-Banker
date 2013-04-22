@@ -40,22 +40,32 @@
         android:id="@+id/logout_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/settings_button"
         android:layout_marginTop="325dp"
-        android:text="@string/logout"
         android:background="#FFCC33"
-        android:onClick="signOutReturnToWelcome" />
+        android:onClick="signOutReturnToWelcome"
+        android:text="@string/logout" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/transactions_button"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
         android:clickable="false"
-        android:scaleType="fitXY"
         android:contentDescription="@drawable/logo2x"
+        android:scaleType="fitXY"
         android:src="@drawable/logo2x" />
+
+    <Button
+        android:id="@id/refresh_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/logout_button"
+        android:layout_alignParentBottom="true"
+        android:background="#FFCC33"
+        android:onClick="refresh"
+        android:text="@string/refresh" />
 
 </RelativeLayout>

@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
 	
 	private static Client client;
 	public static boolean waiting = true;
+	public static boolean correctCreds = true;
 	public static String user;
 	public static String pass;
 	
@@ -106,9 +107,30 @@ public class MainActivity extends Activity {
 		waiting = false;
 	}
 	
+	public static void changeCreds() {
+		correctCreds = false;
+	}
+	
 	public void startWelcome() {
-		Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);
-		startActivity(welcomeIntent);
+		if (correctCreds) {
+			Intent welcomeIntent = new Intent(this, DisplayWelcomeActivity.class);	
+			startActivity(welcomeIntent);
+		} else {
+			AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+			alertDialog.setTitle("UH OH!");
+			alertDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				return;
+			}
+			});
+			alertDialog.setMessage("Username or Password is Incorrect");
+			alertDialog.show();				
+			EditText user = (EditText) findViewById(R.id.username_message);
+			EditText pass = (EditText) findViewById(R.id.password_message);
+			user.setText("");
+			pass.setText("");
+			correctCreds = true;
+		}
 	}
 	
 	public static Client makeClient() {
@@ -119,12 +141,20 @@ public class MainActivity extends Activity {
 	public static Client getClient() {
 		if (client == null) {
 			try {
-				client = new Client("data.cs.purdue.edu", 5003);
+				client = new Client("sslab05.cs.purdue.edu", 5003);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		return client;
+	}
+	
+	protected void onPause() {
+		EditText user = (EditText) findViewById(R.id.username_message);
+		EditText pass = (EditText) findViewById(R.id.password_message);		
+		user.setText("");
+		pass.setText("");
+		super.onPause();
 	}
 
 	@Override

@@ -20,15 +20,15 @@ public class DisplayWelcomeActivity extends Activity {
 		finish();
 	}
 	
-	public void refresh() {
+	public void refresh(View view) {
 		final ProgressDialog progressDialog = new ProgressDialog(this);
-		progressDialog.setMessage("Logging in to PEFCU");
+		progressDialog.setMessage("Refreshing");
 		progressDialog.show();
 
 		Thread thread = new Thread() {
 			public void run() {
 				MainActivity.getClient().sendUserCredentials(MainActivity.user, MainActivity.pass);
-				while (MainActivity.waiting) {
+				while(MainActivity.waiting) {
 					try {
 						Thread.sleep(100);
 					} catch (InterruptedException e) {
@@ -40,6 +40,7 @@ public class DisplayWelcomeActivity extends Activity {
 					@Override
 					public void run() {
 						progressDialog.dismiss();
+						
 					}
 				});
 			}

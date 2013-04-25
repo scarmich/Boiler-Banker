@@ -47,12 +47,13 @@ public class Client extends AbstractClient {
 				System.out.println(userTransactions[i].getDate() + " " + userTransactions[i].getLocation() + " " + userTransactions[i].getAmount());
 			}
 			MainActivity.changeWaiting();
+			/*
 			try {
 				closeConnection();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			//setNewLastFiveTransactions();
 		}
 	}

@@ -59,7 +59,7 @@
         android:src="@drawable/logo2x" />
 
     <Button
-        android:id="@id/refresh_button"
+        android:id="@+id/refresh_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/logout_button"

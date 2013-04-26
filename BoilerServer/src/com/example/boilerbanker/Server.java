@@ -1,3 +1,4 @@
+package com.example.boilerbanker;
 import java.io.IOException;
 
 //package com.example.boilerbanker;
@@ -35,8 +36,18 @@ public class Server extends AbstractServer {
   		System.out.println(userName);
   		System.out.println(password);
   		
+  		PFCUDriver driver;
+  		
   		try {
-			PFCUDriver driver = new PFCUDriver(userName, password);
+			driver = new PFCUDriver(userName, password);
+			if (driver.getFlag()) {
+	  			User user = new User(userName);
+	  			System.out.println(user.getBalance() + " " + user.getTransactions()[0].getLocation());
+	  			this.sendToAllClients((Object) user);
+	  		} else {
+	  			String failure = "Incorrect credentials";
+	  			this.sendToAllClients((Object) failure);
+	  		}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,8 +57,6 @@ public class Server extends AbstractServer {
   		 * implement call to Web driver here using userName and password
   		 */
   		
-  		User user = new User(userName);
-   		this.sendToAllClients((Object) user);
 	}
 	
 }

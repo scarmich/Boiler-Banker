@@ -1,3 +1,4 @@
+package com.example.boilerbanker;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -12,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class PFCUDriver {
+	
+	private boolean credFlag = true;
 	
 	public PFCUDriver(String username, String password) throws IOException {
 		// The Firefox driver supports javascript 
@@ -34,39 +37,44 @@ public class PFCUDriver {
         
         //Handler for security questions
         if (!(driver.getCurrentUrl().equals("https://homebanking.purduefed.com/OnlineBanking/AccountSummary.aspx"))) {
-        	System.out.println("Issue Occured");
-        	System.exit(0);
+        	credFlag = false;
+        	driver.close();
+        } else {
+	        
+	        //Once logged in, navigate to the account views
+	        driver.navigate().to("https://homebanking.purduefed.com/OnlineBanking/ViewAccounts/AccountActivity.aspx");
+	        
+	        //Select the proper account
+	        Select select = new Select(driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$selectedAccount")));
+	        select.selectByIndex(2);
+	        
+	        //Select past 90 days
+	        WebElement timeSelect = driver.findElement(By.id("M_content_PCDZ_M2SN6LC_ctl00_ClearedDateChoices_1"));
+	        timeSelect.click();
+	        
+	        //Click search
+	        WebElement search = driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$search"));
+	        search.click();
+	        
+	        // Gets the page's HTML
+	        String htmlText = driver.getPageSource();
+	        
+	        // Closes Driver
+	        driver.close();
+	        
+	        // Save String to text file
+	        FileWriter file = new FileWriter("transInfo.txt");
+	        PrintWriter output = new PrintWriter(file);
+	        output.println(htmlText);
+	        output.close();
+	        file.close();        
+	        
+	        parse(username);
         }
-        
-        //Once logged in, navigate to the account views
-        driver.navigate().to("https://homebanking.purduefed.com/OnlineBanking/ViewAccounts/AccountActivity.aspx");
-        
-        //Select the proper account
-        Select select = new Select(driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$selectedAccount")));
-        select.selectByIndex(2);
-        
-        //Select past 90 days
-        WebElement timeSelect = driver.findElement(By.id("M_content_PCDZ_M2SN6LC_ctl00_ClearedDateChoices_1"));
-        timeSelect.click();
-        
-        //Click search
-        WebElement search = driver.findElement(By.name("M$content$PCDZ$M2SN6LC$ctl00$search"));
-        search.click();
-        
-        // Gets the page's HTML
-        String htmlText = driver.getPageSource();
-        
-        // Closes Driver
-        driver.close();
-        
-        // Save String to text file
-        FileWriter file = new FileWriter("transInfo.txt");
-        PrintWriter output = new PrintWriter(file);
-        output.println(htmlText);
-        output.close();
-        file.close();        
-        
-        parse(username);
+	}
+	
+	public boolean getFlag() {
+		return credFlag;
 	}
 
 	public static void parse (String username) {
@@ -75,6 +83,7 @@ public class PFCUDriver {
 		String outFile = "UserTransactions/"+username+".txt";
 		try {
 		FileWriter fstream = new FileWriter(outFile);
+		System.out.println("Opened");
 		BufferedWriter out  = new BufferedWriter(fstream);
 		Scanner read = new Scanner(file);
 		while(read.hasNextLine()){
@@ -96,7 +105,9 @@ public class PFCUDriver {
 						parsedString = parsedString.replaceAll("    ", "");
 						//parsedString = parsedString.replaceAll("  [^ ]*", "");
 						parsedString = parsedString.replaceAll("  ", " ");
+						parsedString = parsedString.replaceAll("\\$", "");
 						String []parsed = parsedString.split(" ");
+						
 						String date = parsed[0];
 						String vendor = "";
 						for (int i = 1; i < (parsed.length-3); i++) {
@@ -117,6 +128,8 @@ public class PFCUDriver {
 			
 		}
 		out.close();
+		fstream.close();
+		System.out.println("Finished parsing");
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
